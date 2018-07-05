@@ -1,0 +1,23 @@
+[
+                    {
+                    "page":"home",
+                    "type":"home",
+                    "title":"缩短",
+                    "normal_icon":"home",
+                    "normal_icon_select":"home_select"
+                    },
+                    {
+                    "page":"batch",
+                    "type":"batch",
+                    "title":"批量",
+                    "normal_icon":"batch",
+                    "normal_icon_select":"batch_select"
+                    },
+                    {
+                    "page":"ucenter",
+                    "type":"ucenter",
+                    "title":"我的",
+                    "normal_icon":"me",
+                    "normal_icon_select":"me_select"
+                    }
+                    ]
