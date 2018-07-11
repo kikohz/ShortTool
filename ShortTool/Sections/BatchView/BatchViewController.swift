@@ -51,7 +51,11 @@ class BatchViewController: UIViewController,UITextViewDelegate {
         self.edgesForExtendedLayout = .init(rawValue: 0)
         self.view.backgroundColor = UIColor.init(hexString: "#f3f3f3")
         self.textView.delegate = self
-        
+        //nav
+        let navBar = self.navigationController!.navigationBar
+        navBar.setBackgroundImage(UIImage.creatImg(UIColor.white), for: .default)
+        navBar.shadowImage = UIImage()
+        //
         self.clearButton = DynamicButton(style: .hamburger)
         if self.textView.text.count <= 0 {
             self.clearButton.isHidden = true

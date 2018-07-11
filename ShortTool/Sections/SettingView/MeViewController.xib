@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MeViewController" customModule="ShortTool" customModuleProvider="target">
             <connections>
+                <outlet property="logoImg" destination="a7s-yq-vn6" id="w1n-BN-wFZ"/>
+                <outlet property="subTitle" destination="kgq-OO-Geg" id="LzK-6h-sbJ"/>
+                <outlet property="tableview" destination="hKC-fz-kWh" id="eqB-aW-MoI"/>
+                <outlet property="titleLb" destination="C6r-2u-cKz" id="gEl-aB-nji"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +22,50 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="a7s-yq-vn6">
+                    <rect key="frame" x="138" y="25" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="4cz-o3-WQd"/>
+                        <constraint firstAttribute="width" constant="100" id="YiC-sZ-IcH"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="羊毛那么多，好的才推荐给你" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgq-OO-Geg">
+                    <rect key="frame" x="0.0" y="176" width="375" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="羊毛实验室" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6r-2u-cKz">
+                    <rect key="frame" x="0.0" y="145" width="375" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hKC-fz-kWh">
+                    <rect key="frame" x="0.0" y="286" width="375" height="381"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="C6r-2u-cKz" secondAttribute="trailing" id="4pP-aY-FA4"/>
+                <constraint firstItem="kgq-OO-Geg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JvI-yf-YeC"/>
+                <constraint firstItem="C6r-2u-cKz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Mia-sd-7mf"/>
+                <constraint firstItem="hKC-fz-kWh" firstAttribute="top" secondItem="kgq-OO-Geg" secondAttribute="bottom" constant="93" id="Mnp-U9-u4D"/>
+                <constraint firstItem="a7s-yq-vn6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="WKe-Mg-HpA"/>
+                <constraint firstAttribute="bottom" secondItem="hKC-fz-kWh" secondAttribute="bottom" id="aAL-jb-Sur"/>
+                <constraint firstAttribute="trailing" secondItem="kgq-OO-Geg" secondAttribute="trailing" id="aBY-yc-QkC"/>
+                <constraint firstItem="kgq-OO-Geg" firstAttribute="top" secondItem="C6r-2u-cKz" secondAttribute="bottom" constant="10" id="h6R-7D-tY4"/>
+                <constraint firstItem="a7s-yq-vn6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hLu-GU-a8U"/>
+                <constraint firstAttribute="trailing" secondItem="hKC-fz-kWh" secondAttribute="trailing" id="pF6-3e-sZB"/>
+                <constraint firstItem="hKC-fz-kWh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t67-LQ-VNw"/>
+                <constraint firstItem="C6r-2u-cKz" firstAttribute="top" secondItem="a7s-yq-vn6" secondAttribute="bottom" constant="20" id="xnB-dy-lFx"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="logo" width="100" height="100"/>
+    </resources>
 </document>
