@@ -39,6 +39,12 @@
 		AF88BEF320D25DA900523E14 /* XAFServicesSina.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEF220D25DA900523E14 /* XAFServicesSina.swift */; };
 		AF88BEF520D260EC00523E14 /* SinaShortUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEF420D260EC00523E14 /* SinaShortUrlRequest.swift */; };
 		AF88BEF820D2670200523E14 /* SinaConver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEF720D2670200523E14 /* SinaConver.swift */; };
+		AFBDC06020EF5B3A00201CE5 /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC05E20EF5B3900201CE5 /* MeTableViewCell.swift */; };
+		AFBDC06120EF5B3A00201CE5 /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC05F20EF5B3A00201CE5 /* MeTableViewCell.xib */; };
+		AFBDC06320EF700A00201CE5 /* about.json in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC06220EF700A00201CE5 /* about.json */; };
+		AFBDC06520EF7B1000201CE5 /* AboudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC06420EF7B1000201CE5 /* AboudModel.swift */; };
+		AFBDC06720F37AD800201CE5 /* opensource.html in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC06620F37AD800201CE5 /* opensource.html */; };
+		AFBDC06A20F39EA600201CE5 /* XXWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC06920F39EA600201CE5 /* XXWebView.swift */; };
 		F7F74265FB38FA4B7B1BB4BF /* Pods_ShortTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6713FB9005FC23F2172DF34C /* Pods_ShortTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +89,12 @@
 		AF88BEF220D25DA900523E14 /* XAFServicesSina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAFServicesSina.swift; sourceTree = "<group>"; };
 		AF88BEF420D260EC00523E14 /* SinaShortUrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaShortUrlRequest.swift; sourceTree = "<group>"; };
 		AF88BEF720D2670200523E14 /* SinaConver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaConver.swift; sourceTree = "<group>"; };
+		AFBDC05E20EF5B3900201CE5 /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
+		AFBDC05F20EF5B3A00201CE5 /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
+		AFBDC06220EF700A00201CE5 /* about.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = about.json; sourceTree = "<group>"; };
+		AFBDC06420EF7B1000201CE5 /* AboudModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboudModel.swift; sourceTree = "<group>"; };
+		AFBDC06620F37AD800201CE5 /* opensource.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = opensource.html; sourceTree = "<group>"; };
+		AFBDC06920F39EA600201CE5 /* XXWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XXWebView.swift; sourceTree = "<group>"; };
 		D57E8148F87603D703C8CB23 /* Pods-ShortTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +115,8 @@
 		AF2D742F20D8EA2B005B878C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AFBDC06620F37AD800201CE5 /* opensource.html */,
+				AFBDC06220EF700A00201CE5 /* about.json */,
 				AF2D743220D90C0B005B878C /* tabbar.json */,
 			);
 			path = Resource;
@@ -119,6 +133,7 @@
 		AF4FBD5520DA50D1006869B4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AFBDC06820F39E8E00201CE5 /* View */,
 				AF4FBD6A20DD02B4006869B4 /* RegexHelper */,
 				AF4FBD6220DB9846006869B4 /* ViewMacro.swift */,
 				AF4FBD5620DA510D006869B4 /* Extension */,
@@ -231,6 +246,9 @@
 			children = (
 				AF2D744120D9FE8A005B878C /* MeViewController.swift */,
 				AF2D744220D9FE8A005B878C /* MeViewController.xib */,
+				AFBDC05E20EF5B3900201CE5 /* MeTableViewCell.swift */,
+				AFBDC05F20EF5B3A00201CE5 /* MeTableViewCell.xib */,
+				AFBDC06420EF7B1000201CE5 /* AboudModel.swift */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -327,6 +345,14 @@
 			path = SinaConver;
 			sourceTree = "<group>";
 		};
+		AFBDC06820F39E8E00201CE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AFBDC06920F39EA600201CE5 /* XXWebView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B6D9814ACB5FD7DC5BE7A0ED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,7 +439,10 @@
 				AF2D743320D90C0B005B878C /* tabbar.json in Resources */,
 				AF2D744020D9FE73005B878C /* BatchViewController.xib in Resources */,
 				AF88BECB20D24E7900523E14 /* Assets.xcassets in Resources */,
+				AFBDC06720F37AD800201CE5 /* opensource.html in Resources */,
+				AFBDC06320EF700A00201CE5 /* about.json in Resources */,
 				AF2D743C20D9FE20005B878C /* HomeViewController.xib in Resources */,
+				AFBDC06120EF5B3A00201CE5 /* MeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +461,6 @@
 				"${BUILT_PRODUCTS_DIR}/EFQRCode/EFQRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -441,7 +469,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFQRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -489,6 +516,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2D744320D9FE8A005B878C /* MeViewController.swift in Sources */,
+				AFBDC06520EF7B1000201CE5 /* AboudModel.swift in Sources */,
+				AFBDC06A20F39EA600201CE5 /* XXWebView.swift in Sources */,
 				AF4FBD6120DB967B006869B4 /* GradientButton.m in Sources */,
 				AF2D743820D9FACB005B878C /* STSchemeMap.swift in Sources */,
 				AF2D743520D90DFC005B878C /* TabbarModel.swift in Sources */,
@@ -507,6 +536,7 @@
 				AF88BEE820D2565100523E14 /* XiOSVersion.swift in Sources */,
 				AF4FBD7820E38ADD006869B4 /* ShareService.swift in Sources */,
 				AF88BEEC20D2565100523E14 /* XAFAPIBaseManager.swift in Sources */,
+				AFBDC06020EF5B3A00201CE5 /* MeTableViewCell.swift in Sources */,
 				AF88BEF320D25DA900523E14 /* XAFServicesSina.swift in Sources */,
 				AF4FBD6320DB9846006869B4 /* ViewMacro.swift in Sources */,
 				AF4FBD6C20DD02DB006869B4 /* RegexHelper.swift in Sources */,
@@ -660,10 +690,7 @@
 				);
 				INFOPLIST_FILE = ShortTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ss.ll.yms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShortTool/ShortTool-Bridging-Header.h";
@@ -687,10 +714,7 @@
 				);
 				INFOPLIST_FILE = ShortTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ss.ll.yms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShortTool/ShortTool-Bridging-Header.h";

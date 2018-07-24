@@ -2,7 +2,6 @@ PODS:
   - Alamofire (4.7.2)
   - DynamicButton (5.0.0)
   - EFQRCode (4.2.2)
-  - lottie-ios (2.5.0)
   - MBProgressHUD (1.1.0)
   - SwiftMessages (4.1.4):
     - SwiftMessages/App (= 4.1.4)
@@ -12,7 +11,6 @@ DEPENDENCIES:
   - Alamofire (~> 4.7.2)
   - DynamicButton (~> 5.0.0)
   - EFQRCode (~> 4.2.2)
-  - lottie-ios
   - MBProgressHUD (~> 1.1.0)
   - SwiftMessages
 
@@ -20,10 +18,9 @@ SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   DynamicButton: 4c2fef968e4aa0a8a6ed7ca6b8a58c8e21a36cdc
   EFQRCode: 203846c7b135b5f7c1d18bb7923bc32a74c8b363
-  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SwiftMessages: 2c33fdee8b8f38dfc7e1036684456b505891da8c
 
-PODFILE CHECKSUM: 3f7e5472665fa285aff9a2619d16e0f83933bb17
+PODFILE CHECKSUM: 190b62c04ee7aab6df3c1363f2a4b57d7df2554c
 
 COCOAPODS: 1.4.0

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Lottie
+//import Lottie
 import SwiftMessages
 import MBProgressHUD
 import EFQRCode
