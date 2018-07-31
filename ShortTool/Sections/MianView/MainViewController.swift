@@ -29,6 +29,7 @@ class MainViewController: UITabBarController {
         let jsonPath = Bundle.init(for: MainViewController.self).path(forResource: "tabbar", ofType: "json")
         let data = try! Data.init(contentsOf: URL(fileURLWithPath: jsonPath!), options:.mappedIfSafe)
         let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase 
         let tabbar = try! decoder.decode([TabbarModel].self, from: data)
         return tabbar
     }

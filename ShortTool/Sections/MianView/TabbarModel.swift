@@ -14,11 +14,11 @@ struct TabbarModel: Codable {
     let normalIcon:String
     let normalIconSelect:String
     
-    enum CodingKeys: String, CodingKey {
-        case page
-        case type
-        case title
-        case normalIcon = "normal_icon"
-        case normalIconSelect = "normal_icon_select"
-    }
+//    enum CodingKeys: String, CodingKey {
+//        case page
+//        case type
+//        case title
+//        case normalIcon = "normal_icon"
+//        case normalIconSelect = "normal_icon_select"
+//    }
 }

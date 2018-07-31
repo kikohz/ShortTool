@@ -63,7 +63,9 @@ class SinaConver {
                 self.oldUrl.remove(at: index)
             }
             if let data = response.data {
-                let sinaUrls = try? JSONDecoder().decode(SinaUrlList.self, from: data)
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                let sinaUrls = try? jsonDecoder.decode(SinaUrlList.self, from: data)
                 if let item = sinaUrls?.urls.first {
                     success(item)
                     self.checkQueue()

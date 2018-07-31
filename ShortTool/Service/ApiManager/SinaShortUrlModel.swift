@@ -18,14 +18,15 @@ struct SinaShortUrlModel: Codable {
     
     
     //自定义键名称
-    enum CodingKeys: String, CodingKey {
-        case result
-        case urlShort = "url_short"
-        case urlLong = "url_long"
-        case objectType
-        case type
-        case objectId = "object_id"
-    }
+    //4.1 之后优化这部分，可以不用写 参照:https://benscheirman.com/2018/02/swift-4-1-keydecodingstrategy/
+//    enum CodingKeys: String, CodingKey {
+//        case result
+//        case urlShort = "url_short"
+//        case urlLong = "url_long"
+//        case objectType
+//        case type
+//        case objectId = "object_id"
+//    }
 }
 
 struct SinaUrlList: Codable {

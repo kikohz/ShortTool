@@ -65,13 +65,6 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         self.qrCodeImg.layer.shadowColor = UIColor.init(hexString: "#A9A9A9").cgColor
         self.qrCodeImg.layer.shadowOpacity = 0.8
         self.qrCodeImg.layer.shadowRadius = 15.0
-        //animation
-//        self.buttonAnimation = LOTAnimationView(name: "SUBMIT")
-//        self.buttonAnimation?.frame = (self.convertButton?.bounds)!
-////        self.buttonAnimation?.autoresizingMask = [.flexibleHeight,.flexibleWidth]
-//        self.convertButton.addSubview(self.buttonAnimation!)
-//        self.buttonAnimation?.loopAnimation = true
-//        self.buttonAnimation?.play()
         //通知
         //前台进入程序
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
@@ -203,9 +196,9 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return true
-    }
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        return true
+//    }
     
     //键盘按下完成按键之后
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

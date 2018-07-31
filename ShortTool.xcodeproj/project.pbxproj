@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF2C9C442108BF9800822490 /* opensource.html in Resources */ = {isa = PBXBuildFile; fileRef = AF2C9C432108BF9800822490 /* opensource.html */; };
 		AF2D742C20D36664005B878C /* SinaShortUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D742B20D36664005B878C /* SinaShortUrlModel.swift */; };
 		AF2D742E20D8E83E005B878C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D742D20D8E83E005B878C /* MainViewController.swift */; };
 		AF2D743320D90C0B005B878C /* tabbar.json in Resources */ = {isa = PBXBuildFile; fileRef = AF2D743220D90C0B005B878C /* tabbar.json */; };
@@ -43,7 +44,6 @@
 		AFBDC06120EF5B3A00201CE5 /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC05F20EF5B3A00201CE5 /* MeTableViewCell.xib */; };
 		AFBDC06320EF700A00201CE5 /* about.json in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC06220EF700A00201CE5 /* about.json */; };
 		AFBDC06520EF7B1000201CE5 /* AboudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC06420EF7B1000201CE5 /* AboudModel.swift */; };
-		AFBDC06720F37AD800201CE5 /* opensource.html in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC06620F37AD800201CE5 /* opensource.html */; };
 		AFBDC06A20F39EA600201CE5 /* XXWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC06920F39EA600201CE5 /* XXWebView.swift */; };
 		F7F74265FB38FA4B7B1BB4BF /* Pods_ShortTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6713FB9005FC23F2172DF34C /* Pods_ShortTool.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +51,7 @@
 /* Begin PBXFileReference section */
 		6713FB9005FC23F2172DF34C /* Pods_ShortTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShortTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63A7AA322AF11502873EDA /* Pods-ShortTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool.release.xcconfig"; sourceTree = "<group>"; };
+		AF2C9C432108BF9800822490 /* opensource.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = opensource.html; sourceTree = "<group>"; };
 		AF2D742B20D36664005B878C /* SinaShortUrlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaShortUrlModel.swift; sourceTree = "<group>"; };
 		AF2D742D20D8E83E005B878C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AF2D743220D90C0B005B878C /* tabbar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tabbar.json; sourceTree = "<group>"; };
@@ -93,7 +94,6 @@
 		AFBDC05F20EF5B3A00201CE5 /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
 		AFBDC06220EF700A00201CE5 /* about.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = about.json; sourceTree = "<group>"; };
 		AFBDC06420EF7B1000201CE5 /* AboudModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboudModel.swift; sourceTree = "<group>"; };
-		AFBDC06620F37AD800201CE5 /* opensource.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = opensource.html; sourceTree = "<group>"; };
 		AFBDC06920F39EA600201CE5 /* XXWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XXWebView.swift; sourceTree = "<group>"; };
 		D57E8148F87603D703C8CB23 /* Pods-ShortTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +115,7 @@
 		AF2D742F20D8EA2B005B878C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AFBDC06620F37AD800201CE5 /* opensource.html */,
+				AF2C9C432108BF9800822490 /* opensource.html */,
 				AFBDC06220EF700A00201CE5 /* about.json */,
 				AF2D743220D90C0B005B878C /* tabbar.json */,
 			);
@@ -439,7 +439,7 @@
 				AF2D743320D90C0B005B878C /* tabbar.json in Resources */,
 				AF2D744020D9FE73005B878C /* BatchViewController.xib in Resources */,
 				AF88BECB20D24E7900523E14 /* Assets.xcassets in Resources */,
-				AFBDC06720F37AD800201CE5 /* opensource.html in Resources */,
+				AF2C9C442108BF9800822490 /* opensource.html in Resources */,
 				AFBDC06320EF700A00201CE5 /* about.json in Resources */,
 				AF2D743C20D9FE20005B878C /* HomeViewController.xib in Resources */,
 				AFBDC06120EF5B3A00201CE5 /* MeTableViewCell.xib in Resources */,
@@ -690,7 +690,10 @@
 				);
 				INFOPLIST_FILE = ShortTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ss.ll.yms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShortTool/ShortTool-Bridging-Header.h";
@@ -714,7 +717,10 @@
 				);
 				INFOPLIST_FILE = ShortTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ss.ll.yms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShortTool/ShortTool-Bridging-Header.h";
