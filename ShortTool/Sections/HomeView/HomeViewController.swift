@@ -12,6 +12,7 @@ import SwiftMessages
 import MBProgressHUD
 import EFQRCode
 import VSAlert
+import Device
 
 class HomeViewController: UIViewController,UITextFieldDelegate {
 
@@ -77,6 +78,15 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
+    override func viewDidLayoutSubviews() {
+        //界面调整
+        if Device.size() == .screen4Inch || Device.size() == .screen3_5Inch {
+            self.qrCodeImg.width = 150
+            self.qrCodeImg.height = 150
+            self.qrCodeImg.x = (self.view.width-self.qrCodeImg.width)/2
+            self.qrCodeImg.top = self.lineView.bottom + 50
+        }
+    }
     //进入程序
     @objc func applicationDidBecomeActive() {
         if self.isViewLoaded && (self.view.window != nil) {    //判断当前页面是否在显示
@@ -140,7 +150,9 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     func autoConvert() {
         let pasteboard = UIPasteboard.general
         if let str = pasteboard.string,RegexHelper.isUrl(str) {
-            self.convertTip(str)
+            if str.ranges(of: "http").count == 1 {    //批量的不做自动处理
+                self.convertTip(str)
+            }
         }
     }
 

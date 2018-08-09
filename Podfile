@@ -12,4 +12,5 @@ target 'ShortTool' do
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'EFQRCode', '~> 4.2.2'
   pod 'DynamicButton', '~> 5.0.0'
+  pod 'Device', '~> 3.1.0'
 end

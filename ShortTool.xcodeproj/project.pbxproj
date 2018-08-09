@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF041A17211C2830000905E0 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF041A16211C2830000905E0 /* AppConfig.swift */; };
+		AF041A19211C38F5000905E0 /* AppConfig+load.m in Sources */ = {isa = PBXBuildFile; fileRef = AF041A18211C38F5000905E0 /* AppConfig+load.m */; };
 		AF2C9C442108BF9800822490 /* opensource.html in Resources */ = {isa = PBXBuildFile; fileRef = AF2C9C432108BF9800822490 /* opensource.html */; };
 		AF2D742C20D36664005B878C /* SinaShortUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D742B20D36664005B878C /* SinaShortUrlModel.swift */; };
 		AF2D742E20D8E83E005B878C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D742D20D8E83E005B878C /* MainViewController.swift */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		6713FB9005FC23F2172DF34C /* Pods_ShortTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShortTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63A7AA322AF11502873EDA /* Pods-ShortTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool.release.xcconfig"; sourceTree = "<group>"; };
+		AF041A16211C2830000905E0 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		AF041A18211C38F5000905E0 /* AppConfig+load.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppConfig+load.m"; sourceTree = "<group>"; };
 		AF2C9C432108BF9800822490 /* opensource.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = opensource.html; sourceTree = "<group>"; };
 		AF2D742B20D36664005B878C /* SinaShortUrlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaShortUrlModel.swift; sourceTree = "<group>"; };
 		AF2D742D20D8E83E005B878C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF041A15211C27DD000905E0 /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				AF041A18211C38F5000905E0 /* AppConfig+load.m */,
+				AF041A16211C2830000905E0 /* AppConfig.swift */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
 		AF2D742F20D8EA2B005B878C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +278,7 @@
 		AF88BEDA20D255E000523E14 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				AF041A15211C27DD000905E0 /* AppConfig */,
 				AF4FBD7620E38ACC006869B4 /* ShareService */,
 				AF2D743620D9FAA2005B878C /* OpenScheme */,
 				AF88BEF620D2660900523E14 /* SinaConver */,
@@ -457,6 +471,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicButton/DynamicButton.framework",
 				"${BUILT_PRODUCTS_DIR}/EFQRCode/EFQRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -465,6 +480,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFQRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -532,12 +548,14 @@
 				AF88BEEB20D2565100523E14 /* XAFApiProxy.swift in Sources */,
 				AF2D742C20D36664005B878C /* SinaShortUrlModel.swift in Sources */,
 				AF88BEE920D2565100523E14 /* XAFParamsHelp.swift in Sources */,
+				AF041A17211C2830000905E0 /* AppConfig.swift in Sources */,
 				AF4FBD5A20DB4FA1006869B4 /* Extension.swift in Sources */,
 				AF88BEE820D2565100523E14 /* XiOSVersion.swift in Sources */,
 				AF4FBD7820E38ADD006869B4 /* ShareService.swift in Sources */,
 				AF88BEEC20D2565100523E14 /* XAFAPIBaseManager.swift in Sources */,
 				AFBDC06020EF5B3A00201CE5 /* MeTableViewCell.swift in Sources */,
 				AF88BEF320D25DA900523E14 /* XAFServicesSina.swift in Sources */,
+				AF041A19211C38F5000905E0 /* AppConfig+load.m in Sources */,
 				AF4FBD6320DB9846006869B4 /* ViewMacro.swift in Sources */,
 				AF4FBD6C20DD02DB006869B4 /* RegexHelper.swift in Sources */,
 				AF88BEF820D2670200523E14 /* SinaConver.swift in Sources */,
@@ -690,10 +708,7 @@
 				);
 				INFOPLIST_FILE = ShortTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ss.ll.yms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShortTool/ShortTool-Bridging-Header.h";
@@ -717,10 +732,7 @@
 				);
 				INFOPLIST_FILE = ShortTool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ss.ll.yms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShortTool/ShortTool-Bridging-Header.h";

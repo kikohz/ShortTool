@@ -143,8 +143,11 @@ class BatchViewController: UIViewController,UITextViewDelegate {
         self.textView.text = newText
         self.clearButton.setStyle(.arrowUp, animated: true)
         //提示
-        self.showTip("转换成功", "批量缩短完成", .cardView, .success)
+        self.showTip("转换成功", "批量缩短完成,已经复制到剪切板", .cardView, .success)
         self.convertStatus = ConvertStatus.Complete
+        //复制到剪切板
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = newText
     }
     
     func showTip(_ title:String, _ text:String, _ layoput:MessageView.Layout ,_ theme:Theme) {

@@ -52,7 +52,13 @@ class SinaConver {
     }
     //发起请求
     func requestShortUrl(oldUrl:String, success:@escaping(_ newUrlM:SinaShortUrlModel?)->Void) {
-        let shortUrlRequest = SinaShortUrlRequest.init(longUrl: oldUrl)
+        var sinaSource = "2849184197"
+        if let configDict:Dictionary<String,String> = UserDefaults.standard.object(forKey: "config") as? Dictionary<String, String> {
+            if let sinas = configDict["sina_source"] {
+                sinaSource = sinas
+            }
+        }
+        let shortUrlRequest = SinaShortUrlRequest.init(source:sinaSource,longUrl: oldUrl)
         shortUrlRequest.startWithCompletionBlock {[unowned self] (response) in
 //            if let JSON = response.result.value {
 //                let dict = JSON as! Dictionary<String, Any>
