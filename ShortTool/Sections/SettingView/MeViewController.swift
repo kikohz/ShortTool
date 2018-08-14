@@ -44,6 +44,8 @@ class MeViewController: UIViewController,UITableViewDelegate,UITableViewDataSour
         self.tableview.tableFooterView = UIView.init(frame: CGRect.zero)
         self.tableview.dataSource = self
         self.tableview.delegate = self
+        self.logoImg.layer.cornerRadius = 50
+        self.logoImg.layer.masksToBounds = true
     }
     
     func loadListData() {

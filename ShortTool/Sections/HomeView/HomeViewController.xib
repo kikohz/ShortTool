@@ -14,6 +14,9 @@
                 <outlet property="convertButton" destination="xGu-Mc-SLw" id="e7E-3U-wOO"/>
                 <outlet property="lineView" destination="Y2a-6f-GDw" id="uzN-PI-vn3"/>
                 <outlet property="qrCodeImg" destination="a71-aD-Pem" id="rE7-go-7KY"/>
+                <outlet property="qrCodeImgHeight" destination="NaA-HF-tWp" id="1Y3-VG-DCY"/>
+                <outlet property="qrCodeImgWidth" destination="vHy-bW-DAW" id="v85-m4-hCI"/>
+                <outlet property="qrImgBottomOffset" destination="4Wk-ES-kxC" id="ruh-rB-2hh"/>
                 <outlet property="urlTf" destination="672-Jg-9bb" id="MrE-Yw-9gO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -35,6 +38,13 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </view>
+                <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a71-aD-Pem">
+                    <rect key="frame" x="85" y="305" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="NaA-HF-tWp"/>
+                        <constraint firstAttribute="width" constant="150" id="vHy-bW-DAW"/>
+                    </constraints>
+                </imageView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGu-Mc-SLw" customClass="GradientButton">
                     <rect key="frame" x="16" y="319" width="288" height="51"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -44,12 +54,12 @@
                         <action selector="convertAction:" destination="-1" eventType="touchUpInside" id="sVP-vG-5u5"/>
                     </connections>
                 </button>
-                <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a71-aD-Pem">
-                    <rect key="frame" x="87" y="274" width="200" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="a71-aD-Pem" secondAttribute="bottom" constant="113" id="4Wk-ES-kxC"/>
+                <constraint firstItem="a71-aD-Pem" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l2u-7z-lky"/>
+            </constraints>
             <point key="canvasLocation" x="61.5" y="-65.5"/>
         </view>
     </objects>

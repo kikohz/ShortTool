@@ -19,10 +19,13 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var urlTf: UITextField!
     @IBOutlet weak var convertButton: GradientButton!
-    //动画
-//    private var buttonAnimation:LOTAnimationView?
+
+    @IBOutlet weak var qrImgBottomOffset: NSLayoutConstraint!
+    //    private var buttonAnimation:LOTAnimationView?
     @IBOutlet weak var qrCodeImg: UIImageView!
     
+    @IBOutlet weak var qrCodeImgWidth: NSLayoutConstraint!
+    @IBOutlet weak var qrCodeImgHeight: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -66,6 +69,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         self.qrCodeImg.layer.shadowColor = UIColor.init(hexString: "#A9A9A9").cgColor
         self.qrCodeImg.layer.shadowOpacity = 0.8
         self.qrCodeImg.layer.shadowRadius = 15.0
+        self.qrCodeImg.isHidden = true
         //通知
         //前台进入程序
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
@@ -78,13 +82,18 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-    override func viewDidLayoutSubviews() {
-        //界面调整
-        if Device.size() == .screen4Inch || Device.size() == .screen3_5Inch {
-            self.qrCodeImg.width = 150
-            self.qrCodeImg.height = 150
-            self.qrCodeImg.x = (self.view.width-self.qrCodeImg.width)/2
-            self.qrCodeImg.top = self.lineView.bottom + 50
+//    override func viewDidLayoutSubviews() {
+//    }
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        if Device.size() == .screen4Inch || Device.size() == .screen3_5Inch{
+            self.qrCodeImgWidth.constant = 150
+            self.qrCodeImgHeight.constant = 150
+            self.qrImgBottomOffset.constant = 90
+        }
+        else {
+            self.qrCodeImgWidth.constant = 200
+            self.qrCodeImgHeight.constant = 200
         }
     }
     //进入程序
