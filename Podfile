@@ -13,4 +13,7 @@ target 'ShortTool' do
   pod 'EFQRCode', '~> 4.2.2'
   pod 'DynamicButton', '~> 5.0.0'
   pod 'Device', '~> 3.1.0'
+  pod 'Firebase/Core'
+  pod 'Fabric', '~> 1.7.6'
+  pod 'Crashlytics', '~> 3.10.1'
 end

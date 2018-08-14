@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Firebase
 
 class AppConfig: NSObject {
     //单例
@@ -26,12 +27,13 @@ class AppConfig: NSObject {
     
     // load
     @objc public static func swiftLoad() {
-        Swift.print("swift load")
+//        Swift.print("swift load")
     }
     
     @objc public static func swiftInitialize() {
-        Swift.print("swift Initialize")
+//        Swift.print("swift Initialize")
         AppConfig.shared().updateConfig()
+        AppConfig.shared().configStatistics()
     }
     //setup  fileprivate
     class func setup() {
@@ -39,8 +41,7 @@ class AppConfig: NSObject {
     }
     // 初始化统计相关
     fileprivate func configStatistics() {
-        
-        
+        FirebaseApp.configure()
     }
     
     fileprivate func updateConfig() {

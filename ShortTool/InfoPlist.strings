@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  ShortTool
+
+  Created by Bllgo on 2018/8/10.
+  Copyright © 2018 Bllgo. All rights reserved.
+*/
+CFBundleDisplayName = "缩短";
