@@ -22,7 +22,6 @@
 		AF2D744320D9FE8A005B878C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D744120D9FE8A005B878C /* MeViewController.swift */; };
 		AF2D744420D9FE8A005B878C /* MeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2D744220D9FE8A005B878C /* MeViewController.xib */; };
 		AF375FAD211DE16C00BE69FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF375FAC211DE16C00BE69FB /* InfoPlist.strings */; };
-		AF375FAF2122766400BE69FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF375FAE2122766400BE69FB /* GoogleService-Info.plist */; };
 		AF4FBD5820DA520C006869B4 /* UIcolorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBD5720DA520C006869B4 /* UIcolorHex.swift */; };
 		AF4FBD5A20DB4FA1006869B4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBD5920DB4FA1006869B4 /* Extension.swift */; };
 		AF4FBD6020DB967B006869B4 /* UIImage+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBD5E20DB967B006869B4 /* UIImage+Gradient.m */; };
@@ -70,7 +69,6 @@
 		AF2D744120D9FE8A005B878C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		AF2D744220D9FE8A005B878C /* MeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeViewController.xib; sourceTree = "<group>"; };
 		AF375FAC211DE16C00BE69FB /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
-		AF375FAE2122766400BE69FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF4FBD5720DA520C006869B4 /* UIcolorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIcolorHex.swift; sourceTree = "<group>"; };
 		AF4FBD5920DB4FA1006869B4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AF4FBD5C20DB967B006869B4 /* UIImage+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Gradient.h"; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 				AF88BECC20D24E7900523E14 /* LaunchScreen.storyboard */,
 				AF88BECF20D24E7900523E14 /* Info.plist */,
 				AF375FAC211DE16C00BE69FB /* InfoPlist.strings */,
-				AF375FAE2122766400BE69FB /* GoogleService-Info.plist */,
 				AF88BEEE20D258DA00523E14 /* ShortTool-Bridging-Header.h */,
 			);
 			path = ShortTool;
@@ -463,7 +460,6 @@
 				AF2C9C442108BF9800822490 /* opensource.html in Resources */,
 				AFBDC06320EF700A00201CE5 /* about.json in Resources */,
 				AF2D743C20D9FE20005B878C /* HomeViewController.xib in Resources */,
-				AF375FAF2122766400BE69FB /* GoogleService-Info.plist in Resources */,
 				AFBDC06120EF5B3A00201CE5 /* MeTableViewCell.xib in Resources */,
 				AF375FAD211DE16C00BE69FB /* InfoPlist.strings in Resources */,
 			);
