@@ -1,0 +1,23 @@
+[
+    {
+        "name":"t.cn",
+        "sid":"sina",
+        "api":"https://api.weibo.com/2/short_url/shorten.json",
+        "parameter":"source=45678&url_long=http://google.com",
+        "details":"由weibo提供的短链接服务"
+    },
+    {
+        "name":"tinyurl",
+        "sid":"tinyurl",
+        "api":"https://tinyurl.com/api-create.php",
+        "parameter":"url=http://www.google.com",
+        "details":"TinyURL是第一个专门提供缩略网址服务的网站"
+    },
+    {
+        "name":"bit.ly",
+        "sid":"bitly",
+        "api":"https://api-ssl.bitly.com/v4/shorten",
+        "parameter":"group_guid=string&domain=bit.ly&long_url=string",
+        "details":"bit.ly是一个提供网址缩略的服务站点"
+    }
+]

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF041A17211C2830000905E0 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF041A16211C2830000905E0 /* AppConfig.swift */; };
 		AF041A19211C38F5000905E0 /* AppConfig+load.m in Sources */ = {isa = PBXBuildFile; fileRef = AF041A18211C38F5000905E0 /* AppConfig+load.m */; };
+		AF111E0521240F0800E942E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF111E0421240F0800E942E2 /* GoogleService-Info.plist */; };
 		AF2C9C442108BF9800822490 /* opensource.html in Resources */ = {isa = PBXBuildFile; fileRef = AF2C9C432108BF9800822490 /* opensource.html */; };
 		AF2D742C20D36664005B878C /* SinaShortUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D742B20D36664005B878C /* SinaShortUrlModel.swift */; };
 		AF2D742E20D8E83E005B878C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D742D20D8E83E005B878C /* MainViewController.swift */; };
@@ -21,7 +22,6 @@
 		AF2D744020D9FE73005B878C /* BatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2D743E20D9FE73005B878C /* BatchViewController.xib */; };
 		AF2D744320D9FE8A005B878C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D744120D9FE8A005B878C /* MeViewController.swift */; };
 		AF2D744420D9FE8A005B878C /* MeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2D744220D9FE8A005B878C /* MeViewController.xib */; };
-		AF375FAD211DE16C00BE69FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF375FAC211DE16C00BE69FB /* InfoPlist.strings */; };
 		AF4FBD5820DA520C006869B4 /* UIcolorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBD5720DA520C006869B4 /* UIcolorHex.swift */; };
 		AF4FBD5A20DB4FA1006869B4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBD5920DB4FA1006869B4 /* Extension.swift */; };
 		AF4FBD6020DB967B006869B4 /* UIImage+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBD5E20DB967B006869B4 /* UIImage+Gradient.m */; };
@@ -43,11 +43,14 @@
 		AF88BEF320D25DA900523E14 /* XAFServicesSina.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEF220D25DA900523E14 /* XAFServicesSina.swift */; };
 		AF88BEF520D260EC00523E14 /* SinaShortUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEF420D260EC00523E14 /* SinaShortUrlRequest.swift */; };
 		AF88BEF820D2670200523E14 /* SinaConver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEF720D2670200523E14 /* SinaConver.swift */; };
+		AFBB1791213790E200A9DC02 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFBB1793213790E200A9DC02 /* InfoPlist.strings */; };
 		AFBDC06020EF5B3A00201CE5 /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC05E20EF5B3900201CE5 /* MeTableViewCell.swift */; };
 		AFBDC06120EF5B3A00201CE5 /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC05F20EF5B3A00201CE5 /* MeTableViewCell.xib */; };
 		AFBDC06320EF700A00201CE5 /* about.json in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC06220EF700A00201CE5 /* about.json */; };
 		AFBDC06520EF7B1000201CE5 /* AboudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC06420EF7B1000201CE5 /* AboudModel.swift */; };
 		AFBDC06A20F39EA600201CE5 /* XXWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC06920F39EA600201CE5 /* XXWebView.swift */; };
+		AFC82793212525550018EABF /* service.json in Resources */ = {isa = PBXBuildFile; fileRef = AFC82792212525550018EABF /* service.json */; };
+		AFC827952133F7610018EABF /* XNetworkingHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC827942133F7610018EABF /* XNetworkingHelp.swift */; };
 		F7F74265FB38FA4B7B1BB4BF /* Pods_ShortTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6713FB9005FC23F2172DF34C /* Pods_ShortTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,7 @@
 		7D63A7AA322AF11502873EDA /* Pods-ShortTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool.release.xcconfig"; sourceTree = "<group>"; };
 		AF041A16211C2830000905E0 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		AF041A18211C38F5000905E0 /* AppConfig+load.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppConfig+load.m"; sourceTree = "<group>"; };
+		AF111E0421240F0800E942E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF2C9C432108BF9800822490 /* opensource.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = opensource.html; sourceTree = "<group>"; };
 		AF2D742B20D36664005B878C /* SinaShortUrlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaShortUrlModel.swift; sourceTree = "<group>"; };
 		AF2D742D20D8E83E005B878C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +72,6 @@
 		AF2D743E20D9FE73005B878C /* BatchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BatchViewController.xib; sourceTree = "<group>"; };
 		AF2D744120D9FE8A005B878C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		AF2D744220D9FE8A005B878C /* MeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeViewController.xib; sourceTree = "<group>"; };
-		AF375FAC211DE16C00BE69FB /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		AF4FBD5720DA520C006869B4 /* UIcolorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIcolorHex.swift; sourceTree = "<group>"; };
 		AF4FBD5920DB4FA1006869B4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AF4FBD5C20DB967B006869B4 /* UIImage+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Gradient.h"; sourceTree = "<group>"; };
@@ -96,11 +99,15 @@
 		AF88BEF220D25DA900523E14 /* XAFServicesSina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAFServicesSina.swift; sourceTree = "<group>"; };
 		AF88BEF420D260EC00523E14 /* SinaShortUrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaShortUrlRequest.swift; sourceTree = "<group>"; };
 		AF88BEF720D2670200523E14 /* SinaConver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaConver.swift; sourceTree = "<group>"; };
+		AFBB1792213790E200A9DC02 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		AFBB1794213790E400A9DC02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AFBDC05E20EF5B3900201CE5 /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
 		AFBDC05F20EF5B3A00201CE5 /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
 		AFBDC06220EF700A00201CE5 /* about.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = about.json; sourceTree = "<group>"; };
 		AFBDC06420EF7B1000201CE5 /* AboudModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboudModel.swift; sourceTree = "<group>"; };
 		AFBDC06920F39EA600201CE5 /* XXWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XXWebView.swift; sourceTree = "<group>"; };
+		AFC82792212525550018EABF /* service.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = service.json; sourceTree = "<group>"; };
+		AFC827942133F7610018EABF /* XNetworkingHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNetworkingHelp.swift; sourceTree = "<group>"; };
 		D57E8148F87603D703C8CB23 /* Pods-ShortTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +137,7 @@
 		AF2D742F20D8EA2B005B878C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AFC82792212525550018EABF /* service.json */,
 				AF2C9C432108BF9800822490 /* opensource.html */,
 				AFBDC06220EF700A00201CE5 /* about.json */,
 				AF2D743220D90C0B005B878C /* tabbar.json */,
@@ -222,7 +230,8 @@
 				AF88BECA20D24E7900523E14 /* Assets.xcassets */,
 				AF88BECC20D24E7900523E14 /* LaunchScreen.storyboard */,
 				AF88BECF20D24E7900523E14 /* Info.plist */,
-				AF375FAC211DE16C00BE69FB /* InfoPlist.strings */,
+				AF111E0421240F0800E942E2 /* GoogleService-Info.plist */,
+				AFBB1793213790E200A9DC02 /* InfoPlist.strings */,
 				AF88BEEE20D258DA00523E14 /* ShortTool-Bridging-Header.h */,
 			);
 			path = ShortTool;
@@ -323,6 +332,7 @@
 				AF88BEDF20D2565100523E14 /* Assistants */,
 				AF88BEE320D2565100523E14 /* Components */,
 				AF88BEE620D2565100523E14 /* Services */,
+				AFC827942133F7610018EABF /* XNetworkingHelp.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -457,11 +467,13 @@
 				AF2D743320D90C0B005B878C /* tabbar.json in Resources */,
 				AF2D744020D9FE73005B878C /* BatchViewController.xib in Resources */,
 				AF88BECB20D24E7900523E14 /* Assets.xcassets in Resources */,
+				AFC82793212525550018EABF /* service.json in Resources */,
 				AF2C9C442108BF9800822490 /* opensource.html in Resources */,
 				AFBDC06320EF700A00201CE5 /* about.json in Resources */,
 				AF2D743C20D9FE20005B878C /* HomeViewController.xib in Resources */,
+				AF111E0521240F0800E942E2 /* GoogleService-Info.plist in Resources */,
 				AFBDC06120EF5B3A00201CE5 /* MeTableViewCell.xib in Resources */,
-				AF375FAD211DE16C00BE69FB /* InfoPlist.strings in Resources */,
+				AFBB1791213790E200A9DC02 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +594,7 @@
 				AF4FBD6C20DD02DB006869B4 /* RegexHelper.swift in Sources */,
 				AF88BEF820D2670200523E14 /* SinaConver.swift in Sources */,
 				AF88BEED20D2565100523E14 /* XAFServices.swift in Sources */,
+				AFC827952133F7610018EABF /* XNetworkingHelp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +608,15 @@
 				AF4FBD7920E39D74006869B4 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AFBB1793213790E200A9DC02 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFBB1792213790E200A9DC02 /* zh-Hans */,
+				AFBB1794213790E400A9DC02 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

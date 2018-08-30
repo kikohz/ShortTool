@@ -35,6 +35,8 @@ let SINGLE_LINE_WIDTH = 1/UIScreen.main.scale
 
 
 
+
+
 //MARK: - 坐标(x,y)和宽高(width,height)
 extension UIView {
     @objc var width: CGFloat {

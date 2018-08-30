@@ -49,9 +49,9 @@ class XAFApiProxy {
         let requestID = self.generateRequestId()
         //
         let request = self.sessionManager.request(urlRequest).responseJSON { response in
-            print("Request: \(String(describing: response.request))")
-            print("Response: \(String(describing: response.response))")
-            print("Response: \(response.result)")
+            printLog(message: "Request: \(String(describing: response.request))")
+            printLog(message: "Response: \(String(describing: response.response))")
+            printLog(message: "Response: \(response.result)")
             successBlock(response)
             self.dispatchTable.removeValue(forKey: requestID)   //从请求记录删除已经请求完成的
         }
