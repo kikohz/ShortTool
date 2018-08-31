@@ -56,7 +56,6 @@ class MainViewController: UITabBarController {
                 }
                 //文案
                 let barItem:UITabBarItem = UITabBarItem.init(title: item.title, image: icon, tag: index)
-                
                 barItem.setTitleTextAttributes(titleTextAttDict, for: .normal)
                 barItem.setTitleTextAttributes(titleTextAttSelectDict, for: .selected)
 //                barItem.titlePositionAdjustment = UIOffsetMake(0, 3)

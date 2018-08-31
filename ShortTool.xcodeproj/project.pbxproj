@@ -44,6 +44,7 @@
 		AF88BEF520D260EC00523E14 /* SinaShortUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEF420D260EC00523E14 /* SinaShortUrlRequest.swift */; };
 		AF88BEF820D2670200523E14 /* SinaConver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEF720D2670200523E14 /* SinaConver.swift */; };
 		AFBB1791213790E200A9DC02 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFBB1793213790E200A9DC02 /* InfoPlist.strings */; };
+		AFBB17972139458300A9DC02 /* ShortenServiceManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB17962139458300A9DC02 /* ShortenServiceManage.swift */; };
 		AFBDC06020EF5B3A00201CE5 /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC05E20EF5B3900201CE5 /* MeTableViewCell.swift */; };
 		AFBDC06120EF5B3A00201CE5 /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC05F20EF5B3A00201CE5 /* MeTableViewCell.xib */; };
 		AFBDC06320EF700A00201CE5 /* about.json in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC06220EF700A00201CE5 /* about.json */; };
@@ -101,6 +102,7 @@
 		AF88BEF720D2670200523E14 /* SinaConver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaConver.swift; sourceTree = "<group>"; };
 		AFBB1792213790E200A9DC02 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AFBB1794213790E400A9DC02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AFBB17962139458300A9DC02 /* ShortenServiceManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortenServiceManage.swift; sourceTree = "<group>"; };
 		AFBDC05E20EF5B3900201CE5 /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
 		AFBDC05F20EF5B3A00201CE5 /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
 		AFBDC06220EF700A00201CE5 /* about.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = about.json; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 		AF88BEDA20D255E000523E14 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				AFBB17952139426A00A9DC02 /* ShortenService */,
 				AF041A15211C27DD000905E0 /* AppConfig */,
 				AF4FBD7620E38ACC006869B4 /* ShareService */,
 				AF2D743620D9FAA2005B878C /* OpenScheme */,
@@ -370,6 +373,14 @@
 				AF88BEF720D2670200523E14 /* SinaConver.swift */,
 			);
 			path = SinaConver;
+			sourceTree = "<group>";
+		};
+		AFBB17952139426A00A9DC02 /* ShortenService */ = {
+			isa = PBXGroup;
+			children = (
+				AFBB17962139458300A9DC02 /* ShortenServiceManage.swift */,
+			);
+			path = ShortenService;
 			sourceTree = "<group>";
 		};
 		AFBDC06820F39E8E00201CE5 /* View */ = {
@@ -487,6 +498,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AZDropdownMenu/AZDropdownMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicButton/DynamicButton.framework",
@@ -498,6 +510,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AZDropdownMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicButton.framework",
@@ -569,6 +582,7 @@
 				AFBDC06520EF7B1000201CE5 /* AboudModel.swift in Sources */,
 				AFBDC06A20F39EA600201CE5 /* XXWebView.swift in Sources */,
 				AF4FBD6120DB967B006869B4 /* GradientButton.m in Sources */,
+				AFBB17972139458300A9DC02 /* ShortenServiceManage.swift in Sources */,
 				AF2D743820D9FACB005B878C /* STSchemeMap.swift in Sources */,
 				AF2D743520D90DFC005B878C /* TabbarModel.swift in Sources */,
 				AF4FBD6020DB967B006869B4 /* UIImage+Gradient.m in Sources */,

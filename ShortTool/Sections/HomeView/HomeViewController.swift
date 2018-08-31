@@ -48,8 +48,17 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     }
     
     func configUi() {
-        self.navigationItem.title = "t.cn"
+//        self.navigationItem.title = "t.cn"
         self.view.backgroundColor = UIColor.white//UIColor.init(hexString: "#E3E7E9")
+        //nav
+        let titleButton = UIButton.init(type: .custom)
+        titleButton.setTitle("t.cn", for: .normal)
+        titleButton.titleLabel?.font = UIFont.init(name: "PingFangSC-Semibold", size: 20)
+        titleButton.setTitleColor(UIColor.init(hexString: "3C4945"), for: .normal)
+        titleButton.sizeToFit()
+        titleButton.addTarget(self, action: #selector(showServiceMenu), for: .touchUpInside)
+        self.navigationItem.titleView = titleButton
+        //
         self.lineView.height = SINGLE_LINE_WIDTH
         self.urlTf.delegate = self
         self.urlTf.autocorrectionType = .no
@@ -241,5 +250,11 @@ extension HomeViewController {
             return img
         }
         return nil
+    }
+}
+//MARK: 切换服务
+extension HomeViewController {
+    @objc func showServiceMenu () {
+        
     }
 }
