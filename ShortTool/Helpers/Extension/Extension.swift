@@ -116,3 +116,16 @@ extension UIImage {
         }
     }
 }
+
+extension UIButton {
+    func titleImgAlignRight() {
+        self.layoutIfNeeded()
+        let imageRect = self.imageView!.frame
+        let titleRect = self.titleLabel!.frame
+        let fontSize = self.titleLabel!.font.pointSize
+        let imgtop = fontSize - imageRect.height
+        let space = titleRect.origin.x - imageRect.origin.x  - imageRect.width + 3
+        self.imageEdgeInsets = UIEdgeInsetsMake(imgtop/2, titleRect.width + space, 0, -(titleRect.width + space))
+        self.titleEdgeInsets = UIEdgeInsetsMake(0, -(titleRect.origin.x - imageRect.origin.x), 0, titleRect.origin.x - imageRect.origin.x)
+    }
+}

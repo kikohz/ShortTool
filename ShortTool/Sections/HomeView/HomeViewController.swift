@@ -53,11 +53,15 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         //nav
         let titleButton = UIButton.init(type: .custom)
         titleButton.setTitle("t.cn", for: .normal)
+        titleButton.setImage(#imageLiteral(resourceName: "arrow_down_pressed"), for: .normal)
+//        titleButton.contentHorizontalAlignment = .center
+        titleButton.contentVerticalAlignment = .center
         titleButton.titleLabel?.font = UIFont.init(name: "PingFangSC-Semibold", size: 20)
         titleButton.setTitleColor(UIColor.init(hexString: "3C4945"), for: .normal)
         titleButton.sizeToFit()
         titleButton.addTarget(self, action: #selector(showServiceMenu), for: .touchUpInside)
         self.navigationItem.titleView = titleButton
+        titleButton.titleImgAlignRight()
         //
         self.lineView.height = SINGLE_LINE_WIDTH
         self.urlTf.delegate = self
