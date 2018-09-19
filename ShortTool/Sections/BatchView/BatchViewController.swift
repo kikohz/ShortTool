@@ -73,7 +73,7 @@ class BatchViewController: UIViewController,UITextViewDelegate {
         self.textView.becomeFirstResponder()
         self.textView.selectedTextRange = self.textView.textRange(from: self.textView.beginningOfDocument, to: self.textView.beginningOfDocument)
         // 通知
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: .UIKeyboardDidHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -152,7 +152,7 @@ class BatchViewController: UIViewController,UITextViewDelegate {
     
     func showTip(_ title:String, _ text:String, _ layoput:MessageView.Layout ,_ theme:Theme) {
         var warningConfig = SwiftMessages.defaultConfig
-        warningConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
+        warningConfig.presentationContext = .window(windowLevel: UIWindow.Level(rawValue: UIWindow.Level.statusBar.rawValue))
         let view = MessageView.viewFromNib(layout: layoput)
         view.configureTheme(theme)
         //   view.conf

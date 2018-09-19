@@ -37,7 +37,7 @@ class ServiceManage: NSObject {
         self.serviceList = self.loadService()
     }
     
-    func loadService() -> [ShortenServiceMode] {
+    public func loadService() -> [ShortenServiceMode] {
         let jsonPath = Bundle.init(for: MainViewController.self).path(forResource: "service", ofType: "json")
         let data = try! Data.init(contentsOf: URL(fileURLWithPath: jsonPath!), options:.mappedIfSafe)
         let decoder = JSONDecoder()

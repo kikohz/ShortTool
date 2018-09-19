@@ -13,6 +13,7 @@ import MBProgressHUD
 import EFQRCode
 import VSAlert
 import Device
+import AZDropdownMenu
 
 class HomeViewController: UIViewController,UITextFieldDelegate {
 
@@ -26,12 +27,19 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var qrCodeImgWidth: NSLayoutConstraint!
     @IBOutlet weak var qrCodeImgHeight: NSLayoutConstraint!
+    //
+    let titleButton = UIButton(type: .custom)
+    //切换w服务vmenu
+    var services = [ShortenServiceMode]()
+    var serviceMenu:AZDropdownMenu?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loa ding the view.
 //        self.view.backgroundColor = UIColor.init(hexString: "#f3f3f3")
         self.configUi()
+        self.configService()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +47,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     deinit{
-        NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     //返回键盘
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -50,8 +58,10 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     func configUi() {
 //        self.navigationItem.title = "t.cn"
         self.view.backgroundColor = UIColor.white//UIColor.init(hexString: "#E3E7E9")
+        self.navigationController?.navigationBar.isTranslucent = false
         //nav
-        let titleButton = UIButton.init(type: .custom)
+//        let titleButton = UIButton.init(type: .custom)
+//        titleButton.frame = CGRect(x: 0, y: 0, width: self.view.width, height: 49)
         titleButton.setTitle("t.cn", for: .normal)
         titleButton.setImage(#imageLiteral(resourceName: "arrow_down_pressed"), for: .normal)
 //        titleButton.contentHorizontalAlignment = .center
@@ -76,7 +86,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         //textfield
         let text = "请输入要转换的地址"
         let placeholder = NSMutableAttributedString.init(string: text)
-        placeholder.addAttributes([NSAttributedStringKey.foregroundColor : UIColor.init(hexString: "#C7C7CC")], range: NSMakeRange(0, text.count))
+        placeholder.addAttributes([NSAttributedString.Key.foregroundColor : UIColor.init(hexString: "#C7C7CC")], range: NSMakeRange(0, text.count))
         self.urlTf.attributedPlaceholder = placeholder
         //
         self.qrCodeImg.layer.shadowColor = UIColor.init(hexString: "#A9A9A9").cgColor
@@ -85,7 +95,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         self.qrCodeImg.isHidden = true
         //通知
         //前台进入程序
-        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         //添加点击手势到二维码
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(self.tapQRcode(sender:)))
         tap.numberOfTapsRequired = 1
@@ -145,7 +155,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     
     func showTip(_ title:String, _ text:String, _ layoput:MessageView.Layout ,_ theme:Theme) {
         var warningConfig = SwiftMessages.defaultConfig
-        warningConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
+        warningConfig.presentationContext = .window(windowLevel: UIWindow.Level(rawValue: UIWindow.Level.statusBar.rawValue))
         let view = MessageView.viewFromNib(layout: layoput)
         view.configureTheme(theme)
         //   view.conf
@@ -258,7 +268,40 @@ extension HomeViewController {
 }
 //MARK: 切换服务
 extension HomeViewController {
+    
     @objc func showServiceMenu () {
-        
+        if self.serviceMenu?.isDescendant(of: self.view) == true {
+            self.serviceMenu?.hideMenu()
+        }
+        else {
+            self.serviceMenu?.showMenuFromView(self.view)
+            self.titleButton.setTitle("关闭", for: .normal)
+        }
+    }
+    
+    func configService() {
+        self.services = ServiceManage.shared().loadService()
+        var azdropMenuDataSource = [AZDropdownMenuItemData]()
+        for item in self.services {
+            let azdropItem = AZDropdownMenuItemData.init(title: item.name)
+            azdropMenuDataSource.append(azdropItem)
+        }
+        self.serviceMenu = AZDropdownMenu(dataSource: azdropMenuDataSource)
+        self.serviceMenu?.itemHeight = 70
+        self.serviceMenu?.itemFontSize = 14.0
+        self.serviceMenu?.itemFontName = "Menlo-Bold"
+        self.serviceMenu?.itemColor = UIColor.white
+        self.serviceMenu?.itemFontColor = UIColor(red: 55/255, green: 11/255, blue: 17/255, alpha: 1.0)
+        self.serviceMenu?.overlayColor = UIColor(hexString: "#666666")
+        self.serviceMenu?.overlayAlpha = 0.3
+        self.serviceMenu?.itemAlignment = .center
+        self.serviceMenu?.itemImagePosition = .postfix
+        self.serviceMenu?.menuSeparatorStyle = .none
+        self.serviceMenu?.shouldDismissMenuOnDrag = true
+        //action
+        self.serviceMenu?.cellTapHandler = { [weak self] (indexPath:IndexPath) ->Void in
+            
+            
+        }
     }
 }

@@ -37,8 +37,8 @@ class MainViewController: UITabBarController {
     func configTabbarWith(_ tabs:[TabbarModel]) {
         var navArray = [UINavigationController]()
         let titleColor = UIColor.init(hexString: "#a2a2a2")
-        let titleTextAttSelectDict = [NSAttributedStringKey.foregroundColor : UIColor.init(hexString: "#ed4e39")]
-        let titleTextAttDict = [NSAttributedStringKey.foregroundColor : titleColor]
+        let titleTextAttSelectDict = [NSAttributedString.Key.foregroundColor : UIColor.init(hexString: "#ed4e39")]
+        let titleTextAttDict = [NSAttributedString.Key.foregroundColor : titleColor]
         for (index,item) in tabs.enumerated() {
             if let pageName = STSchemeMap.controllerWith(item.page) {
                 let aClass = NSObject.swiftClassFromString(className: pageName) as! UIViewController.Type

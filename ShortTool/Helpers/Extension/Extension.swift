@@ -125,7 +125,7 @@ extension UIButton {
         let fontSize = self.titleLabel!.font.pointSize
         let imgtop = fontSize - imageRect.height
         let space = titleRect.origin.x - imageRect.origin.x  - imageRect.width + 3
-        self.imageEdgeInsets = UIEdgeInsetsMake(imgtop/2, titleRect.width + space, 0, -(titleRect.width + space))
-        self.titleEdgeInsets = UIEdgeInsetsMake(0, -(titleRect.origin.x - imageRect.origin.x), 0, titleRect.origin.x - imageRect.origin.x)
+        self.imageEdgeInsets = UIEdgeInsets.init(top: imgtop/2, left: titleRect.width + space, bottom: 0, right: -(titleRect.width + space))
+        self.titleEdgeInsets = UIEdgeInsets.init(top: 0, left: -(titleRect.origin.x - imageRect.origin.x), bottom: 0, right: titleRect.origin.x - imageRect.origin.x)
     }
 }

@@ -371,8 +371,8 @@ private typealias wkUIDelegate = XXWebViewController
 extension wkUIDelegate {
     //处理alert事件
     func webView(webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        let ac = UIAlertController(title: webView.title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        ac.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: { (aa) -> Void in
+        let ac = UIAlertController(title: webView.title, message: message, preferredStyle: UIAlertController.Style.alert)
+        ac.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: { (aa) -> Void in
             completionHandler()
         }))
         self.present(ac, animated: true, completion: nil)
