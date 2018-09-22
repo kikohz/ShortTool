@@ -16,5 +16,7 @@ target 'ShortTool' do
   pod 'Firebase/Core'
   pod 'Fabric', '~> 1.7.6'
   pod 'Crashlytics', '~> 3.10.1'
-  pod 'AZDropdownMenu'
+  #pod 'AZDropdownMenu'
+  pod 'SnapKit', '~> 4.0.1'
+  pod 'Reveal-SDK', :configurations => ['Debug']
 end

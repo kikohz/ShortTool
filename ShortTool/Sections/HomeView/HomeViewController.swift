@@ -13,7 +13,8 @@ import MBProgressHUD
 import EFQRCode
 import VSAlert
 import Device
-import AZDropdownMenu
+//import AZDropdownMenu
+import SnapKit
 
 class HomeViewController: UIViewController,UITextFieldDelegate {
 
@@ -30,6 +31,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     //
     let titleButton = UIButton(type: .custom)
     //切换w服务vmenu
+    var currentService = ShortenServiceMode.init()
     var services = [ShortenServiceMode]()
     var serviceMenu:AZDropdownMenu?
     
@@ -60,17 +62,22 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         self.view.backgroundColor = UIColor.white//UIColor.init(hexString: "#E3E7E9")
         self.navigationController?.navigationBar.isTranslucent = false
         //nav
-//        let titleButton = UIButton.init(type: .custom)
-//        titleButton.frame = CGRect(x: 0, y: 0, width: self.view.width, height: 49)
-        titleButton.setTitle("t.cn", for: .normal)
-        titleButton.setImage(#imageLiteral(resourceName: "arrow_down_pressed"), for: .normal)
+        let titleView = UIView.init(frame: CGRect(x: 0, y: 0, width: self.view.width, height: (self.navigationController?.navigationBar.height)!))
+//        titleView.backgroundColor = UIColor.red
+        self.navigationItem.titleView = titleView
+        titleView.addSubview(self.titleButton)
+        self.titleButton.snp.makeConstraints{
+            $0.center.equalToSuperview()
+        }
+//        titleButton.setTitle("t.cn ∨", for: .normal)//∧▽↓^∨∪∩νv
+        titleButton.setAttributedTitle(self.setviceAttStrWith("t.cn ∨"), for: .normal)
+//        titleButton.setImage(#imageLiteral(resourceName: "arrow_down_pressed"), for: .normal)
 //        titleButton.contentHorizontalAlignment = .center
         titleButton.contentVerticalAlignment = .center
-        titleButton.titleLabel?.font = UIFont.init(name: "PingFangSC-Semibold", size: 20)
+        titleButton.titleLabel?.font = UIFont.init(name: "PingFangSC-Semibold", size: 18)
         titleButton.setTitleColor(UIColor.init(hexString: "3C4945"), for: .normal)
         titleButton.sizeToFit()
         titleButton.addTarget(self, action: #selector(showServiceMenu), for: .touchUpInside)
-        self.navigationItem.titleView = titleButton
         titleButton.titleImgAlignRight()
         //
         self.lineView.height = SINGLE_LINE_WIDTH
@@ -268,18 +275,19 @@ extension HomeViewController {
 }
 //MARK: 切换服务
 extension HomeViewController {
-    
     @objc func showServiceMenu () {
         if self.serviceMenu?.isDescendant(of: self.view) == true {
             self.serviceMenu?.hideMenu()
         }
         else {
             self.serviceMenu?.showMenuFromView(self.view)
-            self.titleButton.setTitle("关闭", for: .normal)
+//            self.titleButton.setTitle("关闭", for: .normal)
+            self.titleButton.setAttributedTitle(self.setviceAttStrWith("关闭 ∧"), for: .normal)
         }
     }
     
     func configService() {
+//        self.currentService = ShortenServiceMode.init()
         self.services = ServiceManage.shared().loadService()
         var azdropMenuDataSource = [AZDropdownMenuItemData]()
         for item in self.services {
@@ -292,6 +300,7 @@ extension HomeViewController {
         self.serviceMenu?.itemFontName = "Menlo-Bold"
         self.serviceMenu?.itemColor = UIColor.white
         self.serviceMenu?.itemFontColor = UIColor(red: 55/255, green: 11/255, blue: 17/255, alpha: 1.0)
+        self.serviceMenu?.itemSelectionColor = UIColor(hexString: "#f3f3f3")
         self.serviceMenu?.overlayColor = UIColor(hexString: "#666666")
         self.serviceMenu?.overlayAlpha = 0.3
         self.serviceMenu?.itemAlignment = .center
@@ -300,8 +309,18 @@ extension HomeViewController {
         self.serviceMenu?.shouldDismissMenuOnDrag = true
         //action
         self.serviceMenu?.cellTapHandler = { [weak self] (indexPath:IndexPath) ->Void in
-            
-            
+            let item:ShortenServiceMode = self!.services[indexPath.row]
+            self?.currentService = item
+            self?.titleButton.setAttributedTitle(self?.setviceAttStrWith(item.name+"∨"), for: .normal)
         }
+        
+        self.serviceMenu?.hideMenuHandler = {
+            self.titleButton.setAttributedTitle(self.setviceAttStrWith(self.currentService.name + " ∨"), for: .normal)
+        }
+    }
+    func setviceAttStrWith(_ title:String) ->NSAttributedString {
+        let attstring:NSMutableAttributedString = NSMutableAttributedString.init(string: title)
+        attstring.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13)], range: NSRange(location: title.count-1, length: 1))
+        return attstring
     }
 }

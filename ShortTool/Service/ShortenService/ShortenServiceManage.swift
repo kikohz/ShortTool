@@ -58,4 +58,12 @@ struct ShortenServiceMode:Codable {
     var parameter:String
     var details:String
     var enabled:Bool
+    init() {
+        name = "t.cn"
+        sid = "sina"
+        api = "https://api.weibo.com/2/short_url/shorten.json"
+        parameter = "source=45678&url_long=http://google.com"
+        details = "由weibo提供的短链接服务"
+        enabled = true
+    }
 }
