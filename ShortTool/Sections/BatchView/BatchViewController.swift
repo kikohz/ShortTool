@@ -109,13 +109,13 @@ class BatchViewController: UIViewController,UITextViewDelegate {
     
     func startConvert(){
         self.convertStatus = ConvertStatus.Converting
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         if let text = self.textView.text {
             //解析字符串
             let oldUrls = self.resolveStr(text)
-            
             if oldUrls.count > 0 {
                 //开始短链接转换
+                MBProgressHUD.showAdded(to: self.view, animated: true)
                 SinaConver.shared().converSinaUrl(urls: oldUrls) { (newUrlModel) in
                     MBProgressHUD.hide(for: self.view, animated: true)
                     self.newUrls = newUrlModel

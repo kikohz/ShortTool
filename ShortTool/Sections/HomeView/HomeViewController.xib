@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,9 +14,10 @@
                 <outlet property="convertButton" destination="xGu-Mc-SLw" id="e7E-3U-wOO"/>
                 <outlet property="lineView" destination="Y2a-6f-GDw" id="uzN-PI-vn3"/>
                 <outlet property="qrCodeImg" destination="a71-aD-Pem" id="rE7-go-7KY"/>
-                <outlet property="qrCodeImgHeight" destination="NaA-HF-tWp" id="1Y3-VG-DCY"/>
-                <outlet property="qrCodeImgWidth" destination="vHy-bW-DAW" id="v85-m4-hCI"/>
-                <outlet property="qrImgBottomOffset" destination="4Wk-ES-kxC" id="ruh-rB-2hh"/>
+                <outlet property="qrCodeImgHeight" destination="HsV-Tm-LyW" id="pez-i3-ueY"/>
+                <outlet property="qrCodeImgWidth" destination="lTs-nc-eom" id="py6-KV-wbK"/>
+                <outlet property="qrImgTopOffset" destination="Df1-lm-FGT" id="uvt-AE-UPT"/>
+                <outlet property="textTopOffset" destination="UoS-Dh-hiS" id="IUD-tN-zhh"/>
                 <outlet property="urlTf" destination="672-Jg-9bb" id="MrE-Yw-9gO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,27 +27,28 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入要转换的地址" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="672-Jg-9bb">
-                    <rect key="frame" x="10" y="194" width="300" height="64"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入要转换的地址" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="672-Jg-9bb">
+                    <rect key="frame" x="10" y="194" width="300" height="36"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="done" textContentType="url"/>
                 </textField>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y2a-6f-GDw">
-                    <rect key="frame" x="10" y="258" width="300" height="1"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2a-6f-GDw">
+                    <rect key="frame" x="10" y="230" width="300" height="1"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="BnP-Uk-ZYl"/>
+                    </constraints>
                 </view>
                 <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a71-aD-Pem">
                     <rect key="frame" x="85" y="305" width="150" height="150"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="NaA-HF-tWp"/>
-                        <constraint firstAttribute="width" constant="150" id="vHy-bW-DAW"/>
+                        <constraint firstAttribute="height" constant="150" id="HsV-Tm-LyW"/>
+                        <constraint firstAttribute="width" constant="150" id="lTs-nc-eom"/>
                     </constraints>
                 </imageView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGu-Mc-SLw" customClass="GradientButton">
-                    <rect key="frame" x="16" y="319" width="288" height="51"/>
+                    <rect key="frame" x="16" y="282" width="288" height="51"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.97647058823529409" green="0.29019607843137252" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="缩短"/>
@@ -57,8 +59,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="a71-aD-Pem" secondAttribute="bottom" constant="113" id="4Wk-ES-kxC"/>
-                <constraint firstItem="a71-aD-Pem" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l2u-7z-lky"/>
+                <constraint firstItem="a71-aD-Pem" firstAttribute="top" secondItem="Y2a-6f-GDw" secondAttribute="bottom" constant="74" id="Df1-lm-FGT"/>
+                <constraint firstAttribute="trailing" secondItem="672-Jg-9bb" secondAttribute="trailing" constant="10" id="Dqp-V6-cdT"/>
+                <constraint firstItem="672-Jg-9bb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="HWa-Nc-gNK"/>
+                <constraint firstItem="672-Jg-9bb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="194" id="UoS-Dh-hiS"/>
+                <constraint firstAttribute="trailing" secondItem="Y2a-6f-GDw" secondAttribute="trailing" constant="10" id="XrG-9m-2It"/>
+                <constraint firstItem="a71-aD-Pem" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kxG-T1-AFc"/>
+                <constraint firstItem="Y2a-6f-GDw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="w9q-ZI-w5c"/>
+                <constraint firstItem="Y2a-6f-GDw" firstAttribute="top" secondItem="672-Jg-9bb" secondAttribute="bottom" id="wC7-AA-81p"/>
             </constraints>
             <point key="canvasLocation" x="61.5" y="-65.5"/>
         </view>

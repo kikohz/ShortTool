@@ -22,7 +22,9 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var urlTf: UITextField!
     @IBOutlet weak var convertButton: GradientButton!
 
-    @IBOutlet weak var qrImgBottomOffset: NSLayoutConstraint!
+    @IBOutlet weak var textTopOffset: NSLayoutConstraint!
+    @IBOutlet weak var qrImgTopOffset: NSLayoutConstraint!
+//    @IBOutlet weak var qrImgBottomOffset: NSLayoutConstraint!
     //    private var buttonAnimation:LOTAnimationView?
     @IBOutlet weak var qrCodeImg: UIImageView!
     
@@ -119,7 +121,9 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         if Device.size() == .screen4Inch || Device.size() == .screen3_5Inch{
             self.qrCodeImgWidth.constant = 150
             self.qrCodeImgHeight.constant = 150
-            self.qrImgBottomOffset.constant = 90
+//            self.qrImgBottomOffset.constant = 90
+            self.qrImgTopOffset.constant = 60
+            self.textTopOffset.constant = 150
         }
         else {
             self.qrCodeImgWidth.constant = 200
