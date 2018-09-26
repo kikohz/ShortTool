@@ -414,8 +414,6 @@ extension wkScriptMessageHandler {
         if handller != nil {
             handller!(message.body)
         }
-        print(message.name)
-        print((message.body as AnyObject).description)
     }
 }
 

@@ -42,11 +42,11 @@
 		AF88BEED20D2565100523E14 /* XAFServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEE720D2565100523E14 /* XAFServices.swift */; };
 		AF88BEF320D25DA900523E14 /* XAFServicesSina.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEF220D25DA900523E14 /* XAFServicesSina.swift */; };
 		AF88BEF520D260EC00523E14 /* SinaShortUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEF420D260EC00523E14 /* SinaShortUrlRequest.swift */; };
-		AF88BEF820D2670200523E14 /* SinaConver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF88BEF720D2670200523E14 /* SinaConver.swift */; };
 		AF9847B921567C7E00131AA8 /* AZDropdownMenuConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9847B521567C7E00131AA8 /* AZDropdownMenuConfig.swift */; };
 		AF9847BA21567C7E00131AA8 /* AZDropdownMenuBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9847B621567C7E00131AA8 /* AZDropdownMenuBaseCell.swift */; };
 		AF9847BB21567C7E00131AA8 /* AZDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9847B721567C7E00131AA8 /* AZDropdownMenu.swift */; };
 		AF9847BC21567C7E00131AA8 /* AZDropdownMenuDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9847B821567C7E00131AA8 /* AZDropdownMenuDefaultCell.swift */; };
+		AF9847BE2159D97600131AA8 /* SinaConver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9847BD2159D97600131AA8 /* SinaConver.swift */; };
 		AFBB1791213790E200A9DC02 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFBB1793213790E200A9DC02 /* InfoPlist.strings */; };
 		AFBB17972139458300A9DC02 /* ShortenServiceManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB17962139458300A9DC02 /* ShortenServiceManage.swift */; };
 		AFBDC06020EF5B3A00201CE5 /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC05E20EF5B3900201CE5 /* MeTableViewCell.swift */; };
@@ -103,11 +103,11 @@
 		AF88BEEE20D258DA00523E14 /* ShortTool-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShortTool-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF88BEF220D25DA900523E14 /* XAFServicesSina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAFServicesSina.swift; sourceTree = "<group>"; };
 		AF88BEF420D260EC00523E14 /* SinaShortUrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaShortUrlRequest.swift; sourceTree = "<group>"; };
-		AF88BEF720D2670200523E14 /* SinaConver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaConver.swift; sourceTree = "<group>"; };
 		AF9847B521567C7E00131AA8 /* AZDropdownMenuConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDropdownMenuConfig.swift; sourceTree = "<group>"; };
 		AF9847B621567C7E00131AA8 /* AZDropdownMenuBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDropdownMenuBaseCell.swift; sourceTree = "<group>"; };
 		AF9847B721567C7E00131AA8 /* AZDropdownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDropdownMenu.swift; sourceTree = "<group>"; };
 		AF9847B821567C7E00131AA8 /* AZDropdownMenuDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDropdownMenuDefaultCell.swift; sourceTree = "<group>"; };
+		AF9847BD2159D97600131AA8 /* SinaConver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinaConver.swift; sourceTree = "<group>"; };
 		AFBB1792213790E200A9DC02 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AFBB1794213790E400A9DC02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AFBB17962139458300A9DC02 /* ShortenServiceManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortenServiceManage.swift; sourceTree = "<group>"; };
@@ -304,7 +304,6 @@
 				AF041A15211C27DD000905E0 /* AppConfig */,
 				AF4FBD7620E38ACC006869B4 /* ShareService */,
 				AF2D743620D9FAA2005B878C /* OpenScheme */,
-				AF88BEF620D2660900523E14 /* SinaConver */,
 				AF88BEDB20D255FC00523E14 /* ApiManager */,
 			);
 			path = Service;
@@ -376,14 +375,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		AF88BEF620D2660900523E14 /* SinaConver */ = {
-			isa = PBXGroup;
-			children = (
-				AF88BEF720D2670200523E14 /* SinaConver.swift */,
-			);
-			path = SinaConver;
-			sourceTree = "<group>";
-		};
 		AF9847B421567C7E00131AA8 /* AZDropdownMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +389,7 @@
 		AFBB17952139426A00A9DC02 /* ShortenService */ = {
 			isa = PBXGroup;
 			children = (
+				AF9847BD2159D97600131AA8 /* SinaConver.swift */,
 				AFBB17962139458300A9DC02 /* ShortenServiceManage.swift */,
 			);
 			path = ShortenService;
@@ -616,8 +608,8 @@
 				AF9847BB21567C7E00131AA8 /* AZDropdownMenu.swift in Sources */,
 				AF4FBD6320DB9846006869B4 /* ViewMacro.swift in Sources */,
 				AF4FBD6C20DD02DB006869B4 /* RegexHelper.swift in Sources */,
-				AF88BEF820D2670200523E14 /* SinaConver.swift in Sources */,
 				AF88BEED20D2565100523E14 /* XAFServices.swift in Sources */,
+				AF9847BE2159D97600131AA8 /* SinaConver.swift in Sources */,
 				AFC827952133F7610018EABF /* XNetworkingHelp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

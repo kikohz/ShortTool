@@ -206,20 +206,37 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         if RegexHelper.isUrl(url) {
             MBProgressHUD.showAdded(to: self.view, animated: true)
             self.convertButton.isHidden = true
-            SinaConver.shared().converSinaUrl(urls: [url]) { (newUrlModel) in
+            ServiceManage.shared().converUrl(urls: [url], serviceMode: self.currentService) { (newUrlModel) in
                 MBProgressHUD.hide(for: self.view, animated: true)
                 if newUrlModel.isEmpty {
-                    self.urlTf.text = "缩短失败了😑"
-                    self.qrCodeImg.image = nil
+                    self.showFailureTip()
                 }
+                //s判断是否成功
                 if let item = newUrlModel.first {
-                    self.urlTf.text = item.urlShort
-                    //显示二维码
-                    if let tempShortUrl = item.urlShort {
-                        self.showQRcode(shortUrl: tempShortUrl)
+                    if item.converStatus == .failure {
+                        self.showFailureTip()
+                    }
+                    else {
+                        self.urlTf.text = item.serviceUrl
+                        //显示二维码
+                        self.showQRcode(shortUrl: item.serviceUrl)
                     }
                 }
             }
+//            SinaConver.shared().converSinaUrl(urls: [url]) { (newUrlModel) in
+//                MBProgressHUD.hide(for: self.view, animated: true)
+//                if newUrlModel.isEmpty {
+//                    self.urlTf.text = "缩短失败了😑"
+//                    self.qrCodeImg.image = nil
+//                }
+//                if let item = newUrlModel.first {
+//                    self.urlTf.text = item.urlShort
+//                    //显示二维码
+//                    if let tempShortUrl = item.urlShort {
+//                        self.showQRcode(shortUrl: tempShortUrl)
+//                    }
+//                }
+//            }
         }
         else {
             //无效地址提示
@@ -260,6 +277,16 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         self.qrCodeImg.image = nil
         return true
+    }
+    
+    fileprivate func showFailureTip() {
+        self.urlTf.text = "缩短失败了😑"
+        self.qrCodeImg.image = nil
+    }
+    
+    fileprivate func clearShortUrl() {
+        self.qrCodeImg.image = nil
+        self.urlTf.text = ""
     }
 }
 //MARK: 二维码
@@ -312,10 +339,11 @@ extension HomeViewController {
             let item:ShortenServiceMode = self!.services[indexPath.row]
             self?.currentService = item
             self?.titleButton.setAttributedTitle(self?.setviceAttStrWith(item.name+"∨"), for: .normal)
+//            self?.clearShortUrl()
         }
         
-        self.serviceMenu?.hideMenuHandler = {
-            self.titleButton.setAttributedTitle(self.setviceAttStrWith(self.currentService.name + " ∨"), for: .normal)
+        self.serviceMenu?.hideMenuHandler = { [weak self] in
+            self?.titleButton.setAttributedTitle(self?.setviceAttStrWith((self?.currentService.name)! + " ∨"), for: .normal)
         }
     }
     func setviceAttStrWith(_ title:String) ->NSAttributedString {
