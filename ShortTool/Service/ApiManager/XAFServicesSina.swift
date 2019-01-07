@@ -13,9 +13,9 @@ class XAFServicesSina: XAFServices,XAFServicesProtocol {
         return false
     }
     
-    var offlineApiBaseUrl: String = "https://p.bllgo.com/sina"
+    var offlineApiBaseUrl: String = "https://api.weibo.com"
     
-    var onlineApiBaseUrl: String = "https://p.bllgo.com/sina"
+    var onlineApiBaseUrl: String = "https://api.weibo.com"
     
     var isSecurity: Bool {
         return false

@@ -49,6 +49,10 @@ extension String {
         return rangeArray
     }
     
+    var wordCount: Int {
+        return self.components(separatedBy: CharacterSet.whitespaces).count
+    }
+    
 //    func sameStrCount(_ str:String) {
 //        if let resultRange = self.range(of: str) {
 //

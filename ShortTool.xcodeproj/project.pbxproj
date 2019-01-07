@@ -56,6 +56,8 @@
 		AFBDC06A20F39EA600201CE5 /* XXWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC06920F39EA600201CE5 /* XXWebView.swift */; };
 		AFC82793212525550018EABF /* service.json in Resources */ = {isa = PBXBuildFile; fileRef = AFC82792212525550018EABF /* service.json */; };
 		AFC827952133F7610018EABF /* XNetworkingHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC827942133F7610018EABF /* XNetworkingHelp.swift */; };
+		AFD0494A21D66C8600172E79 /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0494921D66C8600172E79 /* NSUserDefaults.swift */; };
+		AFD0494C21D66C9100172E79 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0494B21D66C9100172E79 /* GCD.swift */; };
 		F7F74265FB38FA4B7B1BB4BF /* Pods_ShortTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6713FB9005FC23F2172DF34C /* Pods_ShortTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,8 @@
 		AFBDC06920F39EA600201CE5 /* XXWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XXWebView.swift; sourceTree = "<group>"; };
 		AFC82792212525550018EABF /* service.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = service.json; sourceTree = "<group>"; };
 		AFC827942133F7610018EABF /* XNetworkingHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNetworkingHelp.swift; sourceTree = "<group>"; };
+		AFD0494921D66C8600172E79 /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaults.swift; sourceTree = "<group>"; };
+		AFD0494B21D66C9100172E79 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		D57E8148F87603D703C8CB23 /* Pods-ShortTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +170,7 @@
 		AF4FBD5520DA50D1006869B4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AFD0494B21D66C9100172E79 /* GCD.swift */,
 				AFBDC06820F39E8E00201CE5 /* View */,
 				AF4FBD6A20DD02B4006869B4 /* RegexHelper */,
 				AF4FBD6220DB9846006869B4 /* ViewMacro.swift */,
@@ -177,6 +182,7 @@
 		AF4FBD5620DA510D006869B4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AFD0494921D66C8600172E79 /* NSUserDefaults.swift */,
 				AF4FBD5720DA520C006869B4 /* UIcolorHex.swift */,
 				AF4FBD5920DB4FA1006869B4 /* Extension.swift */,
 			);
@@ -591,6 +597,7 @@
 				AF88BEF520D260EC00523E14 /* SinaShortUrlRequest.swift in Sources */,
 				AF2D743F20D9FE73005B878C /* BatchViewController.swift in Sources */,
 				AF4FBD5820DA520C006869B4 /* UIcolorHex.swift in Sources */,
+				AFD0494C21D66C9100172E79 /* GCD.swift in Sources */,
 				AF2D743B20D9FE20005B878C /* HomeViewController.swift in Sources */,
 				AF9847BA21567C7E00131AA8 /* AZDropdownMenuBaseCell.swift in Sources */,
 				AF2D742E20D8E83E005B878C /* MainViewController.swift in Sources */,
@@ -611,6 +618,7 @@
 				AF88BEED20D2565100523E14 /* XAFServices.swift in Sources */,
 				AF9847BE2159D97600131AA8 /* SinaConver.swift in Sources */,
 				AFC827952133F7610018EABF /* XNetworkingHelp.swift in Sources */,
+				AFD0494A21D66C8600172E79 /* NSUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

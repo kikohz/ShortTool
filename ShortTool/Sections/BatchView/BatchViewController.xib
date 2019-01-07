@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,12 +23,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaX-IT-qaS">
-                    <rect key="frame" x="0.0" y="1" width="375" height="370"/>
+                    <rect key="frame" x="0.0" y="1" width="375" height="350"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lLK-Mn-SCp">
-                            <rect key="frame" x="10" y="1" width="355" height="361"/>
+                            <rect key="frame" x="10" y="1" width="355" height="341"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <mutableString key="text">京东]斐讯K2 1200M智能双频无线路由器 WIFI穿墙 PSG1218
+                            <string key="text">京东]斐讯K2 1200M智能双频无线路由器 WIFI穿墙 PSG1218
 ————————
 京东价：?379.00
 抢购链接：http://union-click.jd.com/jdc?d=z0wqDf
@@ -38,7 +38,7 @@
 至于斐讯稳不稳自己看吧，我在斐讯车上还有1w+，9月才下车，一点也不慌 
 附全品300-25链接http://union-click.jd.com/jdc?d=Wbp3D7 
 
-更新，凑单剪刀或卷尺能做到274 剪刀http://union-click.jd.com/jdc?d=y8EeRh</mutableString>
+更新，凑单剪刀或卷尺能做到274 剪刀http://union-click.jd.com/jdc?d=y8EeRh</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -53,7 +53,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDi-66-vbK" customClass="GradientButton">
-                    <rect key="frame" x="16" y="403" width="343" height="51"/>
+                    <rect key="frame" x="16" y="383" width="343" height="51"/>
                     <color key="backgroundColor" red="0.97647058819999999" green="0.2901960784" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="51" id="6xE-CC-FgB"/>
@@ -68,7 +68,7 @@
             </subviews>
             <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="DDi-66-vbK" secondAttribute="bottom" constant="213" id="87P-pa-ACl"/>
+                <constraint firstAttribute="bottom" secondItem="DDi-66-vbK" secondAttribute="bottom" constant="233" id="87P-pa-ACl"/>
                 <constraint firstItem="IaX-IT-qaS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="M8H-Pe-U5b"/>
                 <constraint firstItem="IaX-IT-qaS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="1" id="NLh-3X-QiR"/>
                 <constraint firstAttribute="trailing" secondItem="IaX-IT-qaS" secondAttribute="trailing" id="TIu-dW-OdR"/>

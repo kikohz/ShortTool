@@ -45,7 +45,7 @@ class AppConfig: NSObject {
     }
     
     fileprivate func updateConfig() {
-        let url = "https://dn-iloss.qbox.me/shortconfig.json"
+        let url = "https://playkaixin.com/shortconfig.json"
         Alamofire.request(url).responseJSON { (response) in
             if let JSON = response.result.value {
                 let dict = JSON as! Dictionary<String, Any>
