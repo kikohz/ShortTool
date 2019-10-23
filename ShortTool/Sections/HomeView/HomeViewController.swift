@@ -72,7 +72,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
             $0.center.equalToSuperview()
         }
 //        titleButton.setTitle("t.cn ∨", for: .normal)//∧▽↓^∨∪∩νv
-        titleButton.setAttributedTitle(self.setviceAttStrWith("t.cn ∨"), for: .normal)
+        titleButton.setAttributedTitle(self.setviceAttStrWith("dwz.cn ∨"), for: .normal)
 //        titleButton.setImage(#imageLiteral(resourceName: "arrow_down_pressed"), for: .normal)
 //        titleButton.contentHorizontalAlignment = .center
         titleButton.contentVerticalAlignment = .center

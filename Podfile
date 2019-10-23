@@ -13,10 +13,12 @@ target 'ShortTool' do
   pod 'EFQRCode', '~> 4.2.2'
   pod 'DynamicButton', '~> 5.0.0'
   pod 'Device', '~> 3.1.0'
-  pod 'Firebase/Core'
-  pod 'Fabric', '~> 1.7.6'
-  pod 'Crashlytics', '~> 3.10.1'
   #pod 'AZDropdownMenu'
-  pod 'SnapKit', '~> 4.0.1'
-  pod 'Reveal-SDK', :configurations => ['Debug']
+  pod 'SnapKit', '~> 4.2.0'
+  pod 'Firebase/Analytics'
+  # add pods for any other desired Firebase products
+  # https://firebase.google.com/docs/ios/setup#available-pods
+  pod 'Fabric', '~> 1.10.2'
+  pod 'Crashlytics', '~> 3.13.4'
+  pod 'Firebase/RemoteConfig'
 end

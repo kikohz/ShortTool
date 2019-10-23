@@ -12,6 +12,7 @@ enum SreviceType:String {
     case sina
     case tinyurl
     case bitly
+    case baidu
 }
 class ServiceManage: NSObject {
     var serviceList = [ShortenServiceMode]()
@@ -80,6 +81,8 @@ class ServiceManage: NSObject {
             self.requestTinyUrl(oldUrl: oldUrl, type:type, success: success)
         case SreviceType.bitly.rawValue:
             self.requestBitlyUrl(oldUrl: oldUrl, type: type, success: success)
+        case SreviceType.baidu.rawValue:
+            self.requestBaiduShortUrl(oldUrl: oldUrl, type: type, success: success)
         default:
             break
         }
@@ -95,6 +98,41 @@ class ServiceManage: NSObject {
         }
         self.allNewUrlMode.removeAll()
     }
+    //baidu
+    fileprivate func requestBaiduShortUrl(oldUrl:String, type:ShortenServiceMode,success:@escaping(_ newUrlM:ShortenUrlMode?)->Void) {
+        var baiduToken = "b2425c26ae0dd355727014d8efc3632f"
+        let onlineToken = AppConfig.shared().remoreConfigData("baidu_token")
+        if let tempToken = onlineToken {
+            baiduToken = tempToken
+        }
+        let headers:HTTPHeaders = [
+            "Content-Type":"application/json",
+            "Token":baiduToken
+        ]
+        Alamofire.request(type.api, method: .post, parameters: ["Url":oldUrl,"TermOfValidity":"long-term"], encoding:JSONEncoding.default , headers: headers).responseJSON { response in
+            //删除已经转换完成的
+            if let index = self.oldUrl.index(of: oldUrl) {
+                self.oldUrl.remove(at: index)
+            }
+            switch response.result {
+            case .success:
+                let value = response.result.value
+                if value is [String:Any] {
+                    let valueDict:[String:Any] = value as! [String : Any]
+                    if let shorturl = valueDict["ShortUrl"], let tempUrl:String = shorturl as? String {
+                        var urlModel = ShortenUrlMode(url: tempUrl, sid: type.sid)
+                        urlModel.converStatus = .success
+                        success(urlModel)
+                    }
+                }
+                break;
+            case .failure:
+                success(nil)
+                break;
+            }
+            self.checkQueue()
+        }
+    }
     //各自服务请求  sina
     fileprivate func requestSinaShortUrl(oldUrl:String, type:ShortenServiceMode, success:@escaping(_ newUrlM:ShortenUrlMode?)->Void) {
         var sinaSource = "2849184197"
@@ -105,10 +143,6 @@ class ServiceManage: NSObject {
         }
         let shortUrlRequest = SinaShortUrlRequest.init(source:sinaSource,longUrl: oldUrl)
         shortUrlRequest.startWithCompletionBlock {[unowned self] (response) in
-            //            if let JSON = response.result.value {
-            //                let dict = JSON as! Dictionary<String, Any>
-            //                print(dict)
-            //            }
             //删除已经转换完成的
             if let index = self.oldUrl.index(of: oldUrl) {
                 self.oldUrl.remove(at: index)
@@ -201,12 +235,20 @@ struct ShortenServiceMode:Codable {
     var details:String
     var enabled:Bool
     init() {
-        name = "t.cn"
-        sid = "sina"
-        api = "https://api.weibo.com/2/short_url/shorten.json"
-        parameter = "source=45678&url_long=http://google.com"
-        details = "由weibo提供的短链接服务"
+        name = "dwz.cn"
+        sid = "baidu"
+        api = "https://dwz.cn/admin/v2/create"
+        parameter = "TermOfValidity=long-term&Url=http://google.com"
+        details = "Baidu提供的短链接服务"
         enabled = true
+    }
+}
+struct BaiduServiceMode:Codable {
+    var api:String
+    var termOfValidity:String
+    init() {
+        api = "https://dwz.cn/admin/v2/create"
+        termOfValidity = "long-term"
     }
 }
 struct ShortenUrlMode:Codable {
@@ -231,4 +273,11 @@ struct BitlyShortenModel:Codable {
     let link:String?
     let longUrl:String?
     let creatAt:String?
+}
+
+struct BaiduShortenModel:Codable {
+    let Code:String?
+    let ShortUrl:String?
+    let LongUrl:String?
+    let ErrMsg:String?
 }

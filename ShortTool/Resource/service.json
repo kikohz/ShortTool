@@ -1,11 +1,11 @@
 [
     {
-        "name":"t.cn",
+        "name":"dwz.cn",
         "enabled":true,
-        "sid":"sina",
-        "api":"https://api.weibo.com/2/short_url/shorten.json",
-        "parameter":"source=45678&url_long=http://google.com",
-        "details":"由weibo提供的短链接服务"
+        "sid":"baidu",
+        "api":"https://dwz.cn/admin/v2/create",
+        "parameter":"TermOfValidity=long-term&Url=http://google.com",
+        "details":"百度提供的短链接服务"
     },
     {
         "name":"tinyurl",

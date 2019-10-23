@@ -24,34 +24,57 @@ class AppConfig: NSObject {
     private override init() {
         
     }
+    var remoteConfig:RemoteConfig?
     
-    // load
-    @objc public static func swiftLoad() {
-//        Swift.print("swift load")
-    }
-    
-    @objc public static func swiftInitialize() {
-//        Swift.print("swift Initialize")
-        AppConfig.shared().updateConfig()
-        AppConfig.shared().configStatistics()
-    }
     //setup  fileprivate
     class func setup() {
         //初始化
+        AppConfig.shared().configStatistics()
+        AppConfig.shared().updateConfig()
     }
     // 初始化统计相关
     fileprivate func configStatistics() {
         FirebaseApp.configure()
+        remoteConfig = RemoteConfig.remoteConfig()
+              let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig!.configSettings = settings
     }
     
     fileprivate func updateConfig() {
-        let url = "https://playkaixin.com/shortconfig.json"
-        Alamofire.request(url).responseJSON { (response) in
-            if let JSON = response.result.value {
-                let dict = JSON as! Dictionary<String, Any>
-                UserDefaults.standard.set(dict, forKey: "config")
+        // TimeInterval is set to expirationDuration here, indicating the next fetch request will use
+        // data fetched from the Remote Config service, rather than cached parameter values, if cached
+        // parameter values are more than expirationDuration seconds old. See Best Practices in the
+        // README for more information.
+        remoteConfig!.fetch { (status, error) in
+            if status == .success {
+              print("Config fetched!")
+                self.remoteConfig!.activate(completionHandler: { (error) in
+                // ...
+              })
+            } else {
+              print("Config not fetched")
+              print("Error: \(error?.localizedDescription ?? "No error available.")")
             }
         }
     }
+    
+    func remoreConfigData(_ key:String) ->String? {
+        if let tempConfig = self.remoteConfig {
+            let value = tempConfig[key]
+            return value.stringValue
+        }
+        return nil
+    }
+    
+//    fileprivate func updateConfig() {
+//        let url = "https://playkaixin.com/shortconfig.json"
+//        Alamofire.request(url).responseJSON { (response) in
+//            if let JSON = response.result.value {
+//                let dict = JSON as! Dictionary<String, Any>
+//                UserDefaults.standard.set(dict, forKey: "config")
+//            }
+//        }
+//    }
     
 }

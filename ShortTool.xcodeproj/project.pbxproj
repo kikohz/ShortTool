@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AF041A17211C2830000905E0 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF041A16211C2830000905E0 /* AppConfig.swift */; };
-		AF041A19211C38F5000905E0 /* AppConfig+load.m in Sources */ = {isa = PBXBuildFile; fileRef = AF041A18211C38F5000905E0 /* AppConfig+load.m */; };
 		AF111E0521240F0800E942E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF111E0421240F0800E942E2 /* GoogleService-Info.plist */; };
 		AF2C9C442108BF9800822490 /* opensource.html in Resources */ = {isa = PBXBuildFile; fileRef = AF2C9C432108BF9800822490 /* opensource.html */; };
 		AF2D742C20D36664005B878C /* SinaShortUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D742B20D36664005B878C /* SinaShortUrlModel.swift */; };
@@ -65,7 +64,6 @@
 		6713FB9005FC23F2172DF34C /* Pods_ShortTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShortTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63A7AA322AF11502873EDA /* Pods-ShortTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool.release.xcconfig"; sourceTree = "<group>"; };
 		AF041A16211C2830000905E0 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
-		AF041A18211C38F5000905E0 /* AppConfig+load.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppConfig+load.m"; sourceTree = "<group>"; };
 		AF111E0421240F0800E942E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF2C9C432108BF9800822490 /* opensource.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = opensource.html; sourceTree = "<group>"; };
 		AF2D742B20D36664005B878C /* SinaShortUrlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaShortUrlModel.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 		AF041A15211C27DD000905E0 /* AppConfig */ = {
 			isa = PBXGroup;
 			children = (
-				AF041A18211C38F5000905E0 /* AppConfig+load.m */,
 				AF041A16211C2830000905E0 /* AppConfig.swift */,
 			);
 			path = AppConfig;
@@ -474,6 +471,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = AF88BEB720D24E7700523E14;
 			productRefGroup = AF88BEC120D24E7700523E14 /* Products */;
@@ -513,35 +511,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
-				"${BUILT_PRODUCTS_DIR}/DynamicButton/DynamicButton.framework",
-				"${BUILT_PRODUCTS_DIR}/EFQRCode/EFQRCode.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShortTool/Pods-ShortTool-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFQRCode.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShortTool/Pods-ShortTool-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShortTool/Pods-ShortTool-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShortTool/Pods-ShortTool-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2A0275DA99EABFF0BB6D4695 /* [CP] Check Pods Manifest.lock */ = {
@@ -611,7 +590,6 @@
 				AF88BEEC20D2565100523E14 /* XAFAPIBaseManager.swift in Sources */,
 				AFBDC06020EF5B3A00201CE5 /* MeTableViewCell.swift in Sources */,
 				AF88BEF320D25DA900523E14 /* XAFServicesSina.swift in Sources */,
-				AF041A19211C38F5000905E0 /* AppConfig+load.m in Sources */,
 				AF9847BB21567C7E00131AA8 /* AZDropdownMenu.swift in Sources */,
 				AF4FBD6320DB9846006869B4 /* ViewMacro.swift in Sources */,
 				AF4FBD6C20DD02DB006869B4 /* RegexHelper.swift in Sources */,
