@@ -8,7 +8,6 @@
 
 import UIKit
 import StoreKit
-import MBProgressHUD
 import VSAlert
 
 class MeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,SKStoreProductViewControllerDelegate {
@@ -85,11 +84,11 @@ extension MeViewController {
             if #available(iOS 10.3, *) {
                 SKStoreReviewController.requestReview()
             } else {
-                MBProgressHUD.showAdded(to: self.view, animated: true)
+                XXHud.showIndeterminate(hostView: self.view, animation: true)
                 let storeProduct = SKStoreProductViewController.init()
                 storeProduct.delegate = self
                 storeProduct.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier : "1426196485"]) { (result, error) in
-                    MBProgressHUD.hide(for: self.view, animated: true)
+                    XXHud.hideAllHud()
                     if (error != nil) {
                     }
                     else {

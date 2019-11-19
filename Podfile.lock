@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.7.2)
   - Crashlytics (3.13.4):
     - Fabric (~> 1.10.2)
-  - Device (3.1.0)
+  - Device (3.2.1)
   - DynamicButton (5.0.0)
   - EFQRCode (4.2.2)
   - Fabric (1.10.2)
@@ -82,7 +82,6 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.3.1):
     - GoogleUtilities/Logger
-  - MBProgressHUD (1.1.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -93,25 +92,25 @@ PODS:
   - SwiftMessages (4.1.4):
     - SwiftMessages/App (= 4.1.4)
   - SwiftMessages/App (4.1.4)
+  - ZKProgressHUD (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.2)
   - Crashlytics (~> 3.13.4)
-  - Device (~> 3.1.0)
+  - Device (~> 3.2.0)
   - DynamicButton (~> 5.0.0)
   - EFQRCode (~> 4.2.2)
   - Fabric (~> 1.10.2)
   - Firebase/Analytics
   - Firebase/RemoteConfig
-  - MBProgressHUD (~> 1.1.0)
   - SnapKit (~> 4.2.0)
   - SwiftMessages
+  - ZKProgressHUD (= 5.0.1)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Crashlytics
-    - Device
     - DynamicButton
     - EFQRCode
     - Fabric
@@ -128,16 +127,18 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
-    - MBProgressHUD
     - nanopb
     - Protobuf
     - SnapKit
     - SwiftMessages
+  trunk:
+    - Device
+    - ZKProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Crashlytics: 2dfd686bcb918dc10ee0e76f7f853fe42c7bd552
-  Device: 8a21a61f5f938a12dadd44d82287996081b6919b
+  Device: 0738862dd8a30856b4bd9e21cb9b728873d21392
   DynamicButton: 4c2fef968e4aa0a8a6ed7ca6b8a58c8e21a36cdc
   EFQRCode: 203846c7b135b5f7c1d18bb7923bc32a74c8b363
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
@@ -154,12 +155,12 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftMessages: 2c33fdee8b8f38dfc7e1036684456b505891da8c
+  ZKProgressHUD: f1833e23655834d4459c711e94e924e49bc77442
 
-PODFILE CHECKSUM: eee2c7d889ac1a5a685c043e2b087d5c4acb23c2
+PODFILE CHECKSUM: 4095a90fd0d221d965a2a01fb74e884f784f73ed
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

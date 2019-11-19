@@ -21,6 +21,7 @@
 		AF2D744020D9FE73005B878C /* BatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2D743E20D9FE73005B878C /* BatchViewController.xib */; };
 		AF2D744320D9FE8A005B878C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D744120D9FE8A005B878C /* MeViewController.swift */; };
 		AF2D744420D9FE8A005B878C /* MeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2D744220D9FE8A005B878C /* MeViewController.xib */; };
+		AF46D48823828FF70075AD40 /* XXHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF46D48723828FF70075AD40 /* XXHud.swift */; };
 		AF4FBD5820DA520C006869B4 /* UIcolorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBD5720DA520C006869B4 /* UIcolorHex.swift */; };
 		AF4FBD5A20DB4FA1006869B4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBD5920DB4FA1006869B4 /* Extension.swift */; };
 		AF4FBD6020DB967B006869B4 /* UIImage+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBD5E20DB967B006869B4 /* UIImage+Gradient.m */; };
@@ -77,6 +78,7 @@
 		AF2D743E20D9FE73005B878C /* BatchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BatchViewController.xib; sourceTree = "<group>"; };
 		AF2D744120D9FE8A005B878C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		AF2D744220D9FE8A005B878C /* MeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeViewController.xib; sourceTree = "<group>"; };
+		AF46D48723828FF70075AD40 /* XXHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XXHud.swift; sourceTree = "<group>"; };
 		AF4FBD5720DA520C006869B4 /* UIcolorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIcolorHex.swift; sourceTree = "<group>"; };
 		AF4FBD5920DB4FA1006869B4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AF4FBD5C20DB967B006869B4 /* UIImage+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Gradient.h"; sourceTree = "<group>"; };
@@ -162,6 +164,14 @@
 				AF2D743720D9FACB005B878C /* STSchemeMap.swift */,
 			);
 			path = OpenScheme;
+			sourceTree = "<group>";
+		};
+		AF46D48623828FF70075AD40 /* XXHud */ = {
+			isa = PBXGroup;
+			children = (
+				AF46D48723828FF70075AD40 /* XXHud.swift */,
+			);
+			path = XXHud;
 			sourceTree = "<group>";
 		};
 		AF4FBD5520DA50D1006869B4 /* Helpers */ = {
@@ -325,6 +335,7 @@
 		AF88BEDC20D2560E00523E14 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				AF46D48623828FF70075AD40 /* XXHud */,
 				AF9847B421567C7E00131AA8 /* AZDropdownMenu */,
 				AF4FBD5B20DB967B006869B4 /* GradientButton */,
 				AF88BEDD20D2565100523E14 /* XNetworking */,
@@ -584,6 +595,7 @@
 				AF2D742C20D36664005B878C /* SinaShortUrlModel.swift in Sources */,
 				AF88BEE920D2565100523E14 /* XAFParamsHelp.swift in Sources */,
 				AF041A17211C2830000905E0 /* AppConfig.swift in Sources */,
+				AF46D48823828FF70075AD40 /* XXHud.swift in Sources */,
 				AF4FBD5A20DB4FA1006869B4 /* Extension.swift in Sources */,
 				AF88BEE820D2565100523E14 /* XiOSVersion.swift in Sources */,
 				AF4FBD7820E38ADD006869B4 /* ShareService.swift in Sources */,
@@ -747,6 +759,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 88325AHCY3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -758,6 +771,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.st.bllgo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c2a8d756-9514-409d-9f7f-1c12680c7afa";
@@ -777,6 +791,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 88325AHCY3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -788,6 +803,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.st.bllgo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d0456b27-8bca-47d6-b317-7c1d0d58b105";

@@ -9,12 +9,12 @@
 import UIKit
 //import Lottie
 import SwiftMessages
-import MBProgressHUD
 import EFQRCode
 import VSAlert
 import Device
 //import AZDropdownMenu
 import SnapKit
+import Photos
 
 class HomeViewController: UIViewController,UITextFieldDelegate {
 
@@ -72,7 +72,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
             $0.center.equalToSuperview()
         }
 //        titleButton.setTitle("t.cn ∨", for: .normal)//∧▽↓^∨∪∩νv
-        titleButton.setAttributedTitle(self.setviceAttStrWith("dwz.cn ∨"), for: .normal)
+        titleButton.setAttributedTitle(self.setviceAttStrWith("url.cn ∨"), for: .normal)
 //        titleButton.setImage(#imageLiteral(resourceName: "arrow_down_pressed"), for: .normal)
 //        titleButton.contentHorizontalAlignment = .center
         titleButton.contentVerticalAlignment = .center
@@ -108,7 +108,15 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         //添加点击手势到二维码
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(self.tapQRcode(sender:)))
         tap.numberOfTapsRequired = 1
-        self.qrCodeImg.addGestureRecognizer(tap)
+//        self.qrCodeImg.addGestureRecognizer(tap)
+        
+        
+        if #available(iOS 13.0, *) {
+            let interaction = UIContextMenuInteraction(delegate: self)
+            self.qrCodeImg.addInteraction(interaction)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -208,10 +216,10 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     func convertUrl(_ url:String) {
         //检查输入的内容是否正确
         if RegexHelper.isUrl(url) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
+            XXHud.showIndeterminate(hostView: self.view, animation: true)
             self.convertButton.isHidden = true
             ServiceManage.shared().converUrl(urls: [url], serviceMode: self.currentService) { (newUrlModel) in
-                MBProgressHUD.hide(for: self.view, animated: true)
+                XXHud.hideAllHud()
                 if newUrlModel.isEmpty {
                     self.showFailureTip()
                 }
@@ -221,9 +229,9 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
                         self.showFailureTip()
                     }
                     else {
-                        self.urlTf.text = item.serviceUrl
+                        self.urlTf.text = item.shortUrl
                         //显示二维码
-                        self.showQRcode(shortUrl: item.serviceUrl)
+                        self.showQRcode(shortUrl: item.shortUrl)
                     }
                 }
             }
@@ -343,7 +351,12 @@ extension HomeViewController {
             let item:ShortenServiceMode = self!.services[indexPath.row]
             self?.currentService = item
             self?.titleButton.setAttributedTitle(self?.setviceAttStrWith(item.name+"∨"), for: .normal)
-//            self?.clearShortUrl()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                self?.clearShortUrl()
+                if item.sid == "sougou" {
+                    self?.urlTf.text = item.details
+                }
+            })
         }
         
         self.serviceMenu?.hideMenuHandler = { [weak self] in
@@ -354,5 +367,45 @@ extension HomeViewController {
         let attstring:NSMutableAttributedString = NSMutableAttributedString.init(string: title)
         attstring.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13)], range: NSRange(location: title.count-1, length: 1))
         return attstring
+    }
+}
+// UIContextMenuInteraction
+@available(iOS 13.0, *)
+extension HomeViewController:UIContextMenuInteractionDelegate {
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+        let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (actions) -> UIMenu? in
+            let share = UIAction(title: "分享", image: UIImage.init(systemName: "square.and.arrow.up"), identifier: .none, discoverabilityTitle: nil) { (action) in
+                if let qrimg = self.qrCodeImg.image {
+                    self.shareActivity(["分享",qrimg])
+                }
+            }
+            let save = UIAction(title: "保存", image: UIImage.init(systemName: "square.and.arrow.down"), identifier: .none, discoverabilityTitle: nil) { (action) in
+                self.saveImgToPhoto(image: self.qrCodeImg.image!)
+            }
+            return UIMenu(title: "", image: nil, identifier: .none, options: [], children: [share,save])
+        }
+        
+        return config
+    }
+    
+    fileprivate func saveImgToPhoto(image:UIImage) {
+        PHPhotoLibrary.requestAuthorization { (photoStatus) in
+            if photoStatus == .authorized {
+                PHPhotoLibrary.shared().performChanges({
+                    PHAssetChangeRequest.creationRequestForAsset(from: image)
+                }, completionHandler: { (success, error) in
+                    if success {
+                        onMain {
+                            XXHud.showIndeterminate(hostView: self.view, message: "图片已经保存", animation: true)
+                        }
+                    }
+                })
+            }
+            else {
+                onMain{
+                   XXHud.showIndeterminate(hostView: self.view, message: "请开启相册权限之后再试", animation: true)
+                }
+            }
+        }
     }
 }

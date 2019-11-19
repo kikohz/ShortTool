@@ -13,6 +13,7 @@ enum SreviceType:String {
     case tinyurl
     case bitly
     case baidu
+    case sougou
 }
 class ServiceManage: NSObject {
     var serviceList = [ShortenServiceMode]()
@@ -83,6 +84,8 @@ class ServiceManage: NSObject {
             self.requestBitlyUrl(oldUrl: oldUrl, type: type, success: success)
         case SreviceType.baidu.rawValue:
             self.requestBaiduShortUrl(oldUrl: oldUrl, type: type, success: success)
+        case SreviceType.sougou.rawValue:
+            self.requestSogouUrl(oldUrl: oldUrl, type: type, success: success)
         default:
             break
         }
@@ -101,15 +104,14 @@ class ServiceManage: NSObject {
     //baidu
     fileprivate func requestBaiduShortUrl(oldUrl:String, type:ShortenServiceMode,success:@escaping(_ newUrlM:ShortenUrlMode?)->Void) {
         var baiduToken = "b2425c26ae0dd355727014d8efc3632f"
-        let onlineToken = AppConfig.shared().remoreConfigData("baidu_token")
-        if let tempToken = onlineToken {
-            baiduToken = tempToken
+        if let onlineToken = AppConfig.shared().remoreConfigData2("baidu_token") {
+            baiduToken = onlineToken
         }
         let headers:HTTPHeaders = [
             "Content-Type":"application/json",
             "Token":baiduToken
         ]
-        Alamofire.request(type.api, method: .post, parameters: ["Url":oldUrl,"TermOfValidity":"long-term"], encoding:JSONEncoding.default , headers: headers).responseJSON { response in
+        Alamofire.request(type.api, method: .post, parameters: ["Url":oldUrl,"TermOfValidity":"1-year"], encoding:JSONEncoding.default , headers: headers).responseJSON { response in
             //删除已经转换完成的
             if let index = self.oldUrl.index(of: oldUrl) {
                 self.oldUrl.remove(at: index)
@@ -119,8 +121,8 @@ class ServiceManage: NSObject {
                 let value = response.result.value
                 if value is [String:Any] {
                     let valueDict:[String:Any] = value as! [String : Any]
-                    if let shorturl = valueDict["ShortUrl"], let tempUrl:String = shorturl as? String {
-                        var urlModel = ShortenUrlMode(url: tempUrl, sid: type.sid)
+                    if let shorturl = valueDict["ShortUrl"],let longurl = valueDict["LongUrl"], let tempUrl:String = shorturl as? String ,let templongUrl:String = longurl as? String {
+                        var urlModel = ShortenUrlMode(shorturl: tempUrl, longurl: templongUrl, sid: type.sid)
                         urlModel.converStatus = .success
                         success(urlModel)
                     }
@@ -152,7 +154,7 @@ class ServiceManage: NSObject {
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 let sinaUrls = try? jsonDecoder.decode(SinaUrlList.self, from: data)
                 if let item = sinaUrls?.urls.first,let tempUrl = item.urlShort{
-                    var urlModel = ShortenUrlMode(url: tempUrl, sid: type.sid)
+                    var urlModel = ShortenUrlMode(shorturl: tempUrl, longurl: oldUrl, sid: type.sid)
                     urlModel.converStatus = .success
                     success(urlModel)
                     self.checkQueue()
@@ -161,6 +163,29 @@ class ServiceManage: NSObject {
             }
             success(nil)
             self.checkQueue()
+        }
+    }
+    //sougou 比较简单，所以直接发送请求
+    fileprivate func requestSogouUrl(oldUrl:String, type:ShortenServiceMode, success:@escaping(_ newUrlM:ShortenUrlMode?)->Void) {
+        //        let requestUrl = "https://sa.sogou.com/gettiny?url=https://wangdalao.com/"
+        let parameter = ["url":oldUrl]
+        var request = try? URLRequest.init(url: type.api, method: .get)
+        request = try? URLEncoding.default.encode(request!, with: parameter)
+        Alamofire.request(request!).responseString { response in
+            //删除已经转换完成的
+            if let index = self.oldUrl.index(of: oldUrl) {
+                self.oldUrl.remove(at: index)
+            }
+            if let shortUrl:String = response.result.value {
+                var urlModel = ShortenUrlMode(shorturl: shortUrl, longurl: oldUrl, sid: type.sid)
+                urlModel.converStatus = .success
+                success(urlModel)
+                self.checkQueue()
+                return
+            }
+            success(nil)
+            self.checkQueue()
+            //            debugPrint(strData)
         }
     }
     //tinyurl 比较简单，所以直接发送请求
@@ -175,7 +200,7 @@ class ServiceManage: NSObject {
                 self.oldUrl.remove(at: index)
             }
             if let shortUrl:String = response.result.value {
-                var urlModel = ShortenUrlMode(url: shortUrl, sid: type.sid)
+                var urlModel = ShortenUrlMode(shorturl: shortUrl, longurl: oldUrl, sid: type.sid)
                 urlModel.converStatus = .success
                 success(urlModel)
                 self.checkQueue()
@@ -188,12 +213,16 @@ class ServiceManage: NSObject {
     }
     //bitly
     fileprivate func requestBitlyUrl(oldUrl:String, type:ShortenServiceMode, success:@escaping(_ newUrlM:ShortenUrlMode?)->Void) {
+        
         var bitlyAccessToken = "c7a77bccd2d48aa135c3571f3c7b14b91b42b04b"
-        if let configDict:Dictionary<String,String> = UserDefaults.standard.object(forKey: "config") as? Dictionary<String, String> {
-            if let bitly = configDict["bitly_access_token"] {
-                bitlyAccessToken = bitly
-            }
+        if let onlineToken = AppConfig.shared().remoreConfigData2("bitly_access_token") {
+            bitlyAccessToken = onlineToken
         }
+//        if let configDict:Dictionary<String,String> = UserDefaults.standard.object(forKey: "config") as? Dictionary<String, String> {
+//            if let bitly = configDict["bitly_access_token"] {
+//                bitlyAccessToken = bitly
+//            }
+//        }
         let parameter = ["long_url":oldUrl,"domain":"bit.ly"]
         var request = try? URLRequest.init(url: type.api, method: .post)
         request?.addValue("Bearer " + bitlyAccessToken, forHTTPHeaderField: "Authorization")
@@ -210,7 +239,7 @@ class ServiceManage: NSObject {
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 let bitlyShort = try? jsonDecoder.decode(BitlyShortenModel.self, from: data)
                 if let shortUrl = bitlyShort?.link {
-                    var urlModel = ShortenUrlMode(url: shortUrl, sid: type.sid)
+                    var urlModel = ShortenUrlMode(shorturl: shortUrl, longurl: oldUrl, sid: type.sid)
                     urlModel.converStatus = .success
                     success(urlModel)
                     self.checkQueue()
@@ -235,11 +264,11 @@ struct ShortenServiceMode:Codable {
     var details:String
     var enabled:Bool
     init() {
-        name = "dwz.cn"
-        sid = "baidu"
-        api = "https://dwz.cn/admin/v2/create"
-        parameter = "TermOfValidity=long-term&Url=http://google.com"
-        details = "Baidu提供的短链接服务"
+        name = "url.cn"
+        sid = "sougou"
+        api = "https://sa.sogou.com/gettiny"
+        parameter = "url=https://www.google.com"
+        details = "搜狗提供的短链接服务"
         enabled = true
     }
 }
@@ -258,11 +287,13 @@ struct ShortenUrlMode:Codable {
         case failure
         case unknown
     }
-    var serviceUrl:String
+    var shortUrl:String
+    var longUrl:String
     var serviceSid:String
     var converStatus:ConverStatus
-    init(url:String,sid:String) {
-        serviceUrl = url
+    init(shorturl:String,longurl:String, sid:String) {
+        shortUrl = shorturl
+        longUrl = longurl
         serviceSid = sid
         converStatus = .unknown
     }

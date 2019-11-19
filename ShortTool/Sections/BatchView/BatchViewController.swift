@@ -9,7 +9,6 @@
 import UIKit
 import DynamicButton
 import SwiftMessages
-import MBProgressHUD
 
 class BatchViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var backgroundView: UIView!
@@ -23,7 +22,7 @@ class BatchViewController: UIViewController,UITextViewDelegate {
     }
     var convertStatus = ConvertStatus.NotStarted    //转换状态
 //    var oldUrls = [String]()             //转换之前的url数组
-    var newUrls = [SinaShortUrlModel]()             //转换之后的url
+    var newUrls = [ShortenUrlMode]()             //转换之后的url
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -115,12 +114,19 @@ class BatchViewController: UIViewController,UITextViewDelegate {
             let oldUrls = self.resolveStr(text)
             if oldUrls.count > 0 {
                 //开始短链接转换
-                MBProgressHUD.showAdded(to: self.view, animated: true)
-                SinaConver.shared().converSinaUrl(urls: oldUrls) { (newUrlModel) in
-                    MBProgressHUD.hide(for: self.view, animated: true)
+                XXHud.showIndeterminate(hostView: self.view, animation: true)
+                let currentService = ShortenServiceMode.init()
+                ServiceManage.shared().converUrl(urls: oldUrls, serviceMode: currentService) { (newUrlModel) in
+                    XXHud.hideAllHud()
                     self.newUrls = newUrlModel
                     self.updateUrlText()
                 }
+                
+//                SinaConver.shared().converSinaUrl(urls: oldUrls) { (newUrlModel) in
+//                    MBProgressHUD.hide(for: self.view, animated: true)
+//                    self.newUrls = newUrlModel
+//                    self.updateUrlText()
+//                }
             }
             else {
                 self.showTip("解析失败", "解析url失败，请您检查输入的内容", .cardView, .warning)
@@ -136,9 +142,9 @@ class BatchViewController: UIViewController,UITextViewDelegate {
         let tempTextStr = self.textView.text
         var newText = tempTextStr
         for sinaUrlModel in self.newUrls {
-            if let urlShort = sinaUrlModel.urlShort ,let urlLong = sinaUrlModel.urlLong{
-                newText = newText?.replacingOccurrences(of: urlLong, with: urlShort)
-            }
+//            if let urlShort = sinaUrlModel.shortUrl ,let urlLong = sinaUrlModel.longUrl{
+                newText = newText?.replacingOccurrences(of: sinaUrlModel.longUrl, with: sinaUrlModel.shortUrl)
+//            }
         }
         self.textView.text = newText
         self.clearButton.setStyle(.arrowUp, animated: true)

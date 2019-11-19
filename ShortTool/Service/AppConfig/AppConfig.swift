@@ -25,19 +25,21 @@ class AppConfig: NSObject {
         
     }
     var remoteConfig:RemoteConfig?
+    var remoteConfigDict:[String:Any] = [String:Any]()
     
     //setup  fileprivate
     class func setup() {
         //初始化
         AppConfig.shared().configStatistics()
         AppConfig.shared().updateConfig()
+        AppConfig.shared().updateJsonConfig()
     }
     // 初始化统计相关
     fileprivate func configStatistics() {
         FirebaseApp.configure()
         remoteConfig = RemoteConfig.remoteConfig()
               let settings = RemoteConfigSettings()
-        settings.minimumFetchInterval = 0
+        settings.minimumFetchInterval = 3
         remoteConfig!.configSettings = settings
     }
     
@@ -48,13 +50,13 @@ class AppConfig: NSObject {
         // README for more information.
         remoteConfig!.fetch { (status, error) in
             if status == .success {
-              print("Config fetched!")
+                print("Config fetched!")
                 self.remoteConfig!.activate(completionHandler: { (error) in
-                // ...
-              })
+                    // ...
+                })
             } else {
-              print("Config not fetched")
-              print("Error: \(error?.localizedDescription ?? "No error available.")")
+                print("Config not fetched")
+                print("Error: \(error?.localizedDescription ?? "No error available.")")
             }
         }
     }
@@ -67,14 +69,22 @@ class AppConfig: NSObject {
         return nil
     }
     
-//    fileprivate func updateConfig() {
-//        let url = "https://playkaixin.com/shortconfig.json"
-//        Alamofire.request(url).responseJSON { (response) in
-//            if let JSON = response.result.value {
-//                let dict = JSON as! Dictionary<String, Any>
-//                UserDefaults.standard.set(dict, forKey: "config")
-//            }
-//        }
-//    }
+    func remoreConfigData2(_ key:String) ->String? {
+        if self.remoteConfigDict.count > 0 {
+            return self.remoteConfigDict[key] as? String
+        }
+        return nil
+    }
+    
+    fileprivate func updateJsonConfig() {
+        let url = "https://bllgo.com/short_url.json"
+        Alamofire.request(url).responseJSON { (response) in
+            if let JSON = response.result.value {
+                let dict = JSON as! Dictionary<String, Any>
+                self.remoteConfigDict = dict
+                UserDefaults.standard.set(dict, forKey: "config")
+            }
+        }
+    }
     
 }

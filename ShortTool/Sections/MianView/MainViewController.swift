@@ -65,6 +65,7 @@ class MainViewController: UITabBarController {
                 navController.navigationBar.isTranslucent = true
                 navController.extendedLayoutIncludesOpaqueBars = true
                 navArray.append(navController)
+                self.tabBar.tintColor = titleTextAttSelectDict[.foregroundColor]
             }
             
             self.tabBar.shadowImage = UIImage.init()
