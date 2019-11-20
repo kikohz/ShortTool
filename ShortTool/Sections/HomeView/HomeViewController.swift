@@ -108,14 +108,13 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         //添加点击手势到二维码
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(self.tapQRcode(sender:)))
         tap.numberOfTapsRequired = 1
-//        self.qrCodeImg.addGestureRecognizer(tap)
-        
         
         if #available(iOS 13.0, *) {
             let interaction = UIContextMenuInteraction(delegate: self)
             self.qrCodeImg.addInteraction(interaction)
         } else {
             // Fallback on earlier versions
+            self.qrCodeImg.addGestureRecognizer(tap)
         }
     }
     
